@@ -47,6 +47,25 @@
 
 
 
+/* CAREERS BEGINS */
+.careers-body{
+    background-color: #b1dcfb;
+/* background-color: #0e0e0e; */
+}
+#list{
+display: inherit
+}
+.center, .center-align{
+    text-align: center;
+    text-shadow: -4px -1px black;
+
+}
+/* CAREERS ENDS */
+
+
+
+
+
 
 
 
