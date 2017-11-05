@@ -7,8 +7,11 @@ angular.module('codecc.factories', [])
     });
 }])
 .factory('User', ['$resource', function($resource) {
-    return $resource('/api/users/:id');
-    
+    return $resource('/api/users/:id'), { id: '@id' }, {
+        update: {
+            method: 'PUT'
+        }
+    }
 }])
 .factory('Reply', ['$resource', function($resource) {
     return $resource('/api/replies/:id'), { id: '@id' }, {
@@ -18,9 +21,17 @@ angular.module('codecc.factories', [])
     }
 }])
 .factory('Bootcamp', ['$resource', function($resource){
-    return $resource('api/bootcamps'), {
+    return $resource('/api/bootcamps'), { id: '@id' }, {
         update: {
             method: 'PUT'
         }
     }
 }])
+.factory('Review', ['$resource', function($resource){
+    return $resource('/api/review/:id'), { id: '@id' }, {
+        update: {
+            method: 'PUT'
+        }
+    }
+}])
+

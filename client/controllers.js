@@ -40,8 +40,7 @@ angular.module('codecc.controllers', [])
     }
 }])
 
-.controller('HomeController', ['$scope', 'Post', 'User', '$location', function($scope, Post, User, $location) {
-    $scope.users = User.query();
+.controller('HomeController', ['$scope', 'Post', '$location', function($scope, Post, $location) {
     $scope.posts = Post.query();
     //later make $scope.posts by followers
      

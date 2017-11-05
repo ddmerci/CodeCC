@@ -10,7 +10,7 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     })
     .when('/signup', {
         templateUrl: 'views/signup.html', 
-        controller: 'SignupController' 
+        controller: 'SignupController' // server 500 error
     })
     .when('/home', {
         templateUrl: 'views/home.html', 
@@ -36,7 +36,7 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     })
     .when('/bootcamps', {
         templateUrl: 'views/bootcamps.html', //issue
-        //controller: 
+        controller: 'BootcampsController'
     })
     .when('/resources', {
         templateUrl: 'views/resources.html'

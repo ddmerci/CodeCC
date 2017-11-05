@@ -1,22 +1,25 @@
-<div>
-        <div>
-            <h1>BOOTCAMPS</h1><button class="btn btn-warning btn-sm" ng-href="#" ng-click="post()"role="button">add bootcamp</button>
-        </div>
-        <div >
-            
-        </div>
-        <div class="container" ng-controller="BootcampsController" ng-repeat="b in bootcamps">
-            <div class="row">
-                <div class="col-xs-6 col-sm-8 col-lg-10">
-                    <div class="left">
-                        <img ng-src="{{ b.listingpic }}" height="100" width="100" alt="https://i.amz.mshcdn.com/9PKxGdKciBavn9H-ue3TP9iHOuQ=/1200x627/2013%2F04%2F30%2F1e%2Fcodingfutur.d5369.jpg" style="border-radius: 5%">
-                        <h3>{{ b.name }}{{ b.stack }}{{ b.cost }}</h3>
-                        <br>
-                    </div>
-                    <div class="right">
-                            <button class="btn btn-warning btn-sm" ng-href="#" ng-click="post()"role="button">add review</button>
-                    </div>
+<div ng-controller="BootcampsController">
+    <div>
+        <h1>BOOTCAMPS</h1>
+        <button class="btn btn-warning btn-sm" ng-href="#" ng-click="post()" role="button">add bootcamp</button>
+    </div>
+    <div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-8 col-lg-10">
+            <div class="left">
+                <div class="container" ng-repeat="b in bootcamps">
+                    <img ng-src="{{ b.listingpic }}" height="100" width="100" alt="https://i.amz.mshcdn.com/9PKxGdKciBavn9H-ue3TP9iHOuQ=/1200x627/2013%2F04%2F30%2F1e%2Fcodingfutur.d5369.jpg"
+                        style="border-radius: 5%">
+                    <h3>{{ b.name }}{{ b.stack }}{{ b.cost }}</h3>
+                    <br>
+                </div>
+                <div class="right">
+                    <button class="btn btn-warning btn-sm" ng-href="#" ng-click="post()" role="button">add review</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
