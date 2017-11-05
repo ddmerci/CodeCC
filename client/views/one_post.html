@@ -1,7 +1,7 @@
-<div>
-    <div >
+<div ng-controller="PostReplyController">
+    <div>
         <div class="container">
-        <div class="left" ng-controller="PostReplyController"><p>
+        <div class="left"><p>
             <img ng-src="{{ post.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
             <h4>{{ post.username }}</h4>
         </div>
@@ -13,7 +13,7 @@
         <!-- not mobile responsive -->
         <a class="btn btn-primary btn-sm" ng-href="#" role="button">post</a></p>
         
-        <div class="container" ng-repeat="r in reply"> 
+        <div class="container" ng-repeat="r in replies"> 
             <!-- issue loading replies -->
             <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
             <h4>{{ r.username }}{{ r.reply }}</h4>
