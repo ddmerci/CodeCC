@@ -23,7 +23,6 @@ angular.module('codecc.controllers', [])
 }])
 
 .controller('SignupController', ['$scope', 'User', function($scope, User) {
-    // $scope.users = User.query();
 
     $scope.createUser = function() {
         var u = new User($scope.newUser);
@@ -42,12 +41,12 @@ angular.module('codecc.controllers', [])
 
 .controller('HomeController', ['$scope', 'Post', '$location', function($scope, Post, $location) {
     $scope.posts = Post.query();
-    //later make $scope.posts by followers
+    //later $scope.posts by followers
      
     $scope.save = function() {
         var p = new Post($scope.post);
         p.$save(function() {
-            $location.path('/');
+            $location.path('/home');
         }, function(err) {
             console.log(err);
         });
@@ -55,13 +54,13 @@ angular.module('codecc.controllers', [])
 }])
 
 .controller('PostReplyController', ['$scope', '$routeParams', '$location', '$resource', '$http', 'Post', 'Reply', function($scope, $routeParams, $location, $resource, $http, Post, Reply) {
-    //one_post.html
+    //one_post.html with all replies for that post
     
     $scope.post = Post.get({ id: $routeParams.id });
     // $scope.replies = Reply.get({ id: $routeParams.id });
     $http.get('/api/replies/' + $routeParams.id).then(function(response) {
         this.$get = function() {
-        $scope.reply = response; 
+        $scope.replies = response; 
         //console.log(response); replies are binding because they will console.log but not show up in view
         }
     });
@@ -84,9 +83,9 @@ angular.module('codecc.controllers', [])
     }
 }])
 
-.controller('BootcampsController', ['$scope', '$resource', 'Bootcamp', 'User', '$location', function($scope, $resource, Bootcamp, User, $location) {
-    $scope.users = User.query();
-    // $scope.reviews = Review.query();
+.controller('BootcampsController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, Bootcamp, User, $location) {
+//all bootcamps with option to add a bootcamp
+
     $scope.bootcamps = Bootcamp.query();
       
     $scope.save = function() {
