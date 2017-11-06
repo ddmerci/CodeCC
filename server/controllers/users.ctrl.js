@@ -1,27 +1,29 @@
 var express = require('express');
-//var passport = require('passport');
+var passport = require('passport');
 var procedures = require('../procedures/users.proc');
-//var auth = require('../middleware/auth.mw');
-//var utils = require('../utils');
+var auth = require('../middleware/auth.mw');
+var utils = require('../services/utils');
 var router = express.Router();
 
 router.route('/')
 
-    .get(function (req, res) {
-        procedures.all()
-            .then(function (users) {
-                res.send(users);
+    .post(auth.isAdmin, function (req, res) {
+        var u = req.body;
+        utils.encryptPassword(req.body.password)
+            .then(function (hash) {
+                return procedures.create(u.firstname, u.lastname, u.email, u.username, u.bootcamp, u.profilepic)
+            }).then(function (id) {
+                res.sendStatus(201).send(id)
             }).catch(function (err) {
                 console.log(err);
                 res.sendStatus(500);
             });
     })
 
-    .post(function (req, res) {
-        var u = req.body;
-        procedures.create(u.firstname, u.lastname, u.email, u.username, u.bootcamp, u.profilepic)
-            .then(function (id) {
-                res.sendStatus(201).send(id)
+    .get(function (req, res) {
+        procedures.all()
+            .then(function (users) {
+                res.send(users);
             }).catch(function (err) {
                 console.log(err);
                 res.sendStatus(500);
@@ -62,7 +64,7 @@ router.route('/:id')
     });
 
 
-/* actually /api/users/login
+/* actually /api/users/login */
 router.post('/login', function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
         if (err) {
@@ -96,7 +98,7 @@ router.get('/me', function (req, res) {
 });
 
 // actually /api/users/
-router.route('/')
+/*router.route('/')
     .get(function (req, res) {
         procedures.all()
             .then(function (users) {
@@ -116,7 +118,7 @@ router.route('/')
                 console.log(err);
                 res.sendStatus(500);
             });
-    });
-  */
+    });*/
+
 
 module.exports = router;

@@ -5,7 +5,7 @@ var MySQLStore = require('express-mysql-session')(session);
 var LocalStrategy = require('passport-local').Strategy;
 var userProc = require('../procedures/users.proc');
 var pool = require('./db').pool;
-var utils = require('../utils');
+var utils = require('../services/utils');
 
 function configurePassport(app) {
     passport.use(new LocalStrategy({
