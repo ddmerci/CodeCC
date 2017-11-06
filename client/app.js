@@ -32,7 +32,8 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
         controller: 'MultichoiceController'
     })
     .when('/careers', {
-        templateUrl: 'views/careers.html'
+        templateUrl: 'views/careers.html',
+        controller: 'CareersController'
     })
     .when('/bootcamps', {
         templateUrl: 'views/bootcamps.html', //issue
