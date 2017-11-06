@@ -2,9 +2,9 @@ var mysql = require('mysql');
 
 var pool = mysql.createPool({
     connectionLimit: 10,
-    host: process.env.RDS_HOSTNAME,
-    user: process.env.RDS_USER,
-    password: process.env.RDS_PASSWORD,
+    host: process.env.DATABASE_URL,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
     database: "heroku_5cd555101543687"
 });
 exports.pool = pool;
