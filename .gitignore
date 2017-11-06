@@ -1,6 +1,6 @@
 node_modules
 .variables
-DS_Store
+.DS_Store
 
 # Logs
 logs
