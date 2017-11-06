@@ -7,7 +7,7 @@ var router = express.Router();
 
 router.route('/')
 
-    .post(auth.isAdmin, function (req, res) {
+    .post(function (req, res) {
         var u = req.body;
         utils.encryptPassword(req.body.password)
             .then(function (hash) {
