@@ -22,9 +22,9 @@ router.route('/:id')
                 console.log(err);
                 res.sendStatus(500);
             })
-    });
+    })
 
-router.route('/:id')
+// router.route('/:id')
 
     .put(function (req, res) {
         procedures.update(req.params.id, req.body.reply, req.body.timestamp)

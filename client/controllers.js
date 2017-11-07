@@ -53,17 +53,11 @@ angular.module('codecc.controllers', [])
     }
 }])
 
-.controller('PostReplyController', ['$scope', '$routeParams', '$location', '$resource', '$http', 'Post', 'Reply', function($scope, $routeParams, $location, $resource, $http, Post, Reply) {
+.controller('PostReplyController', ['$scope', '$routeParams', '$location', '$resource', 'Post', 'Reply', function($scope, $routeParams, $location, $resource, Post, Reply) {
     //one_post.html with all replies for that post
     
     $scope.post = Post.get({ id: $routeParams.id });
-    // $scope.replies = Reply.get({ id: $routeParams.id });
-    $http.get('/api/replies/' + $routeParams.id).then(function(response) {
-        this.$get = function() {
-        $scope.replies = response; 
-        //console.log(response); replies are binding because they will console.log but not show up in view
-        }
-    });
+    $scope.replies = Reply.query({ id: $routeParams.id });
 
     $scope.edit = function() {
         $location.path('/' + $routeParams.id + '/update');
@@ -144,131 +138,129 @@ angular.module('codecc.controllers', [])
 
 
 
-// //COLOR GAME CONTROLLER
-// .controller('MultichoiceController', ['$scope', 'User', '$location', function($scope, User, $location) {
-// var numSquares = 6;
-// var colors = [];
-// var pickedColor;
-// var squares = document.querySelectorAll(".square");
-// var colorDisplay = document.getElementById("colorDisplay");
-// var messageDisplay = document.querySelector("#message");
-// var h1 = document.querySelector("h1");
-// var resetButton = document.querySelector("#reset");
-// var modeButtons = document.querySelectorAll(".mode");
+//COLOR GAME CONTROLLER
+.controller('MultichoiceController', ['$scope', 'User', '$location', function($scope, User, $location) {
+var numSquares = 6;
+var colors = [];
+var pickedColor;
+var squares = document.querySelectorAll(".square");
+var colorDisplay = document.getElementById("colorDisplay");
+var messageDisplay = document.querySelector("#message");
+var h1 = document.querySelector("h1");
+var resetButton = document.querySelector("#reset");
+var modeButtons = document.querySelectorAll(".mode");
 
 
-// init();
+init();
 
-// function init() {
-//     setupModeButtons();
-//     setupSquares();
-//     reset();
-// }
-// var sound = new Howl({
-//     src: ['./views/sounds/bubbles.mp3']
+function init() {
+    setupModeButtons();
+    setupSquares();
+    reset();
+}
+var sound = new Howl({
+    src: ['./views/sounds/bubbles.mp3']
   
-//   });
-//   var sound2 = new Howl({
-//     src: ['./views/sounds/strike.mp3']
-// });
+  });
+  var sound2 = new Howl({
+    src: ['./views/sounds/strike.mp3']
+});
 
-// var sound3= new Howl({
-//     src: ['./views/sounds/zig-zag.mp3']
-// });
+var sound3= new Howl({
+    src: ['./views/sounds/zig-zag.mp3']
+});
 
 
 
-// function setupModeButtons() {
-//     for (var i = 0; i < modeButtons.length; i++) {
-//         modeButtons[i].addEventListener("click", function () {
-//             modeButtons[0].classList.remove("selected");
-//             modeButtons[1].classList.remove("selected");
-//             this.classList.add("selected");
-//             this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
-//             reset();
+function setupModeButtons() {
+    for (var i = 0; i < modeButtons.length; i++) {
+        modeButtons[i].addEventListener("click", function () {
+            modeButtons[0].classList.remove("selected");
+            modeButtons[1].classList.remove("selected");
+            this.classList.add("selected");
+            this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
+            reset();
         
-//         });
-//     }
-// }
+        });
+    }
+}
 
 
-// function setupSquares() {
-//     for (var i = 0; i < squares.length; i++) {
-//         squares[i].addEventListener("click", function () {
-//             var clickedColor = this.style.background;
-//             if (clickedColor === pickedColor) {
-//                 messageDisplay.textContent = "Correct!";
-//                 resetButton.textContent = "Play Again?"
-//                 changeColors(clickedColor);
-//                 h1.style.background = clickedColor;
-//                 sound.play(); 
+function setupSquares() {
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].addEventListener("click", function () {
+            var clickedColor = this.style.background;
+            if (clickedColor === pickedColor) {
+                messageDisplay.textContent = "Correct!";
+                resetButton.textContent = "Play Again?"
+                changeColors(clickedColor);
+                h1.style.background = clickedColor;
+                sound.play(); 
                 
                 
-//             } else {
-//                 this.style.background = "#232323";
-//                 messageDisplay.textContent = "Try Again"
-//                 sound2.play();
-//             }
-//         });
-//     }
-// }
+            } else {
+                this.style.background = "#232323";
+                messageDisplay.textContent = "Try Again"
+                sound2.play();
+            }
+        });
+    }
+}
 
-// function reset() {
-//     colors = generateRandomColors(numSquares);
-//     pickedColor = pickColor();
-//     colorDisplay.textContent = pickedColor;
-//     resetButton.textContent = "New Colors"
-//     messageDisplay.textContent = "";
-//     for (var i = 0; i < squares.length; i++) {
-//         if (colors[i]) {
-//             squares[i].style.display = "block"
-//             squares[i].style.background = colors[i];
-//         } else {
-//             squares[i].style.display = "none";
+function reset() {
+    colors = generateRandomColors(numSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    resetButton.textContent = "New Colors"
+    messageDisplay.textContent = "";
+    for (var i = 0; i < squares.length; i++) {
+        if (colors[i]) {
+            squares[i].style.display = "block"
+            squares[i].style.background = colors[i];
+        } else {
+            squares[i].style.display = "none";
            
-//         }
-//     }
-//     h1.style.background = "steelblue";
-// }
+        }
+    }
+    h1.style.background = "steelblue";
+}
 
-// resetButton.addEventListener("click", function () {
-//     reset(); sound3.play();
+resetButton.addEventListener("click", function () {
+    reset(); sound3.play();
     
     
-// })
+})
 
-// function changeColors(color) {
-//     for (var i = 0; i < squares.length; i++) {
-//         squares[i].style.background = color;
-//     }
-// }
+function changeColors(color) {
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.background = color;
+    }
+}
 
-// function pickColor() {
-//     var random = Math.floor(Math.random() * colors.length);
-//    return colors [random];
+function pickColor() {
+    var random = Math.floor(Math.random() * colors.length);
+   return colors [random];
 
-// }
+}
 
-// function generateRandomColors(num) {
-//     var arr = []
-//     for (var i = 0; i < num; i++) {
-//         arr.push(randomColor())
-//     }
-//     return arr;
-// }
+function generateRandomColors(num) {
+    var arr = []
+    for (var i = 0; i < num; i++) {
+        arr.push(randomColor())
+    }
+    return arr;
+}
 
-// function randomColor() {
-//     //pick a red from 0 - 255
-//     var r = Math.floor(Math.random() * 256);
-//     //pick a green from  0 -255
-//     var g = Math.floor(Math.random() * 256);
-//     //pick a blue from  0 -255
-//     var b = Math.floor(Math.random() * 256);
-//     return "rgb(" + r + ", " + g + ", " + b + ")";
-// }
-// }])
-
-
+function randomColor() {
+    //pick a red from 0 - 255
+    var r = Math.floor(Math.random() * 256);
+    //pick a green from  0 -255
+    var g = Math.floor(Math.random() * 256);
+    //pick a blue from  0 -255
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+}])
 
 
 
@@ -281,191 +273,334 @@ angular.module('codecc.controllers', [])
 
 
 
-// // MULTICHOICE CONTROLLER
-// .controller('MultichoiceController', ['$scope', '$resource', 'User', '$location', function($scope, $resource, User, $location) {
 
-//     (function() {
+
+// MULTICHOICE CONTROLLER
+.controller('MultichoiceController', ['$scope', '$resource', 'User', '$location', function($scope, $resource, User, $location) {
+
+    (function() {
     
-// var myQuestions = [
-//     {
-//         question: "Which language is most know for styling our websites?",
-//         answers: {
-//             a: "JavaScript",
-//             b: "CSS",
-//             c: "AngularJS"
-//         },
-//         correctAnswer: "b"
-//     },
-//     {
-//         question: "What does OOP stand for?",
-//         answers: {
-//             a: "Object-oriented Programming",
-//             b: "Online Operating Procedure",
-//             c: "Overly-optimistic Programmer"
-//         },
-//         correctAnswer: "a"
-//     },
-//     {
-//         question: "How is an array composed?",
-//         answers: {
-//             a: "Curly brackets {}",
-//             b: "Parentheses ()",
-//             c: "Square brackets []"
-//         },
-//         correctAnswer: "c"
-//     },
-//     {
-//         question: "What best describes the boolean datatype?",
-//         answers: {
-//             a: "True/False",
-//             b: "Positive/Negative",
-//             c: "Up/Down/All-around"
-//         },
-//         correctAnswer: "a"
-//     },
-//     {
-//         question: "What is the PUT method synonymous with?",
-//         answers: {
-//             a: "Creating",
-//             b: "Updating",
-//             c: "Deleting"
-//         },
-//         correctAnswer: "b"
-//     },
-//     {
-//         question: "Where is Node.js utilized?",
-//         answers: {
-//             a: "Backend",
-//             b: "Frontend",
-//             c: "MySQL"
-//         },
-//         correctAnswer: "a"
-//     },
-//     {
-//         question: "What does the p element represent?",
-//         answers: {
-//             a: "Python",
-//             b: "Paragraph",
-//             c: "Parser"
-//         },
-//         correctAnswer: "b"
-//     },
-//     {
-//         question: "Why do we use console.log?",
-//         answers: {
-//             a: "Debugging purposes",
-//             b: "Because it's so much fun",
-//             c: "To add functionality"
-//         },
-//         correctAnswer: "a"
-//     },
-//     {
-//         question: "What does it mean when we receive a 500 HTTP Status Code?",
-//         answers: {
-//             a: "OK",
-//             b: "Unauthorized",
-//             c: "Internal Server Error"
-//         },
-//         correctAnswer: "c"
-//     },
-//     {
-//         question: "How do we incorporate our CSS styling into our HTML file?",
-//         answers: {
-//             a: "By adding a span element within the body",
-//             b: "By adding a link element within the head",
-//             c: "By adding a script element with a paragraph"
-//         },
-//         correctAnswer: "b"
-//     }
-// ];
-// function buildQuiz() {
-//     var output = [];
-//     myQuestions.forEach((currentQuestion, questionNumber) => {
-//       var answers = [];
-//       for (letter in currentQuestion.answers) {
-//         answers.push(
-//           `<label>
-//              <input type="radio" name="question${questionNumber}" value="${letter}">
-//               ${letter} :
-//               ${currentQuestion.answers[letter]}
-//            </label>`
-//         );
-//       }
+var myQuestions = [
+    {
+        question: "Which language is most know for styling our websites?",
+        answers: {
+            a: "JavaScript",
+            b: "CSS",
+            c: "AngularJS"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What does OOP stand for?",
+        answers: {
+            a: "Object-oriented Programming",
+            b: "Online Operating Procedure",
+            c: "Overly-optimistic Programmer"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "How is an array composed?",
+        answers: {
+            a: "Curly brackets {}",
+            b: "Parentheses ()",
+            c: "Square brackets []"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "What best describes the boolean datatype?",
+        answers: {
+            a: "True/False",
+            b: "Positive/Negative",
+            c: "Up/Down/All-around"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What is the PUT method synonymous with?",
+        answers: {
+            a: "Creating",
+            b: "Updating",
+            c: "Deleting"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Where is Node.js utilized?",
+        answers: {
+            a: "Backend",
+            b: "Frontend",
+            c: "MySQL"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What does the p element represent?",
+        answers: {
+            a: "Python",
+            b: "Paragraph",
+            c: "Parser"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Why do we use console.log?",
+        answers: {
+            a: "Debugging purposes",
+            b: "Because it's so much fun",
+            c: "To add functionality"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What does it mean when we receive a 500 HTTP Status Code?",
+        answers: {
+            a: "OK",
+            b: "Unauthorized",
+            c: "Internal Server Error"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "How do we incorporate our CSS styling into our HTML file?",
+        answers: {
+            a: "By adding a span element within the body",
+            b: "By adding a link element within the head",
+            c: "By adding a script element with a paragraph"
+        },
+        correctAnswer: "b"
+    }
+];
+function buildQuiz() {
+    var output = [];
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      var answers = [];
+      for (letter in currentQuestion.answers) {
+        answers.push(
+          `<label>
+             <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+           </label>`
+        );
+      }
 
-//       output.push(
-//         `<div class="slide">
-//            <div class="question"> ${currentQuestion.question} </div>
-//            <div class="answers"> ${answers.join("")} </div>
-//          </div>`
-//       );
-//     });
+      output.push(
+        `<div class="slide">
+           <div class="question"> ${currentQuestion.question} </div>
+           <div class="answers"> ${answers.join("")} </div>
+         </div>`
+      );
+    });
 
-//     quizContainer.innerHTML = output.join("");
-//   }
+    quizContainer.innerHTML = output.join("");
+  }
 
-//   function showResults() {
-//     var answerContainers = quizContainer.querySelectorAll(".answers");
-//     var numCorrect = 0;
-//     myQuestions.forEach((currentQuestion, questionNumber) => {
-//       var answerContainer = answerContainers[questionNumber];
-//       var selector = `input[name=question${questionNumber}]:checked`;
-//       var userAnswer = (answerContainer.querySelector(selector) || {}).value;
+  function showResults() {
+    var answerContainers = quizContainer.querySelectorAll(".answers");
+    var numCorrect = 0;
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      var answerContainer = answerContainers[questionNumber];
+      var selector = `input[name=question${questionNumber}]:checked`;
+      var userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-//       if (userAnswer === currentQuestion.correctAnswer) {
-//         numCorrect++;
+      if (userAnswer === currentQuestion.correctAnswer) {
+        numCorrect++;
 
-//         answerContainers[questionNumber].style.color = "lightgreen";
-//       } else {
-//         answerContainers[questionNumber].style.color = "red";
-//       }
-//     });
+        answerContainers[questionNumber].style.color = "lightgreen";
+      } else {
+        answerContainers[questionNumber].style.color = "red";
+      }
+    });
 
-//     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-//   }
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
 
-//   function showSlide(n) {
-//     slides[currentSlide].classList.remove("active-slide");
-//     slides[n].classList.add("active-slide");
-//     currentSlide = n;
+  function showSlide(n) {
+    slides[currentSlide].classList.remove("active-slide");
+    slides[n].classList.add("active-slide");
+    currentSlide = n;
     
-//     if (currentSlide === 0) {
-//       previousButton.style.display = "none";
-//     } else {
-//       previousButton.style.display = "inline-block";
-//     }
+    if (currentSlide === 0) {
+      previousButton.style.display = "none";
+    } else {
+      previousButton.style.display = "inline-block";
+    }
     
-//     if (currentSlide === slides.length - 1) {
-//       nextButton.style.display = "none";
-//       submitButton.style.display = "inline-block";
-//     } else {
-//       nextButton.style.display = "inline-block";
-//       submitButton.style.display = "none";
-//     }
-//   }
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = "none";
+      submitButton.style.display = "inline-block";
+    } else {
+      nextButton.style.display = "inline-block";
+      submitButton.style.display = "none";
+    }
+  }
 
-//   function showNextSlide() {
-//     showSlide(currentSlide + 1);
-//   }
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
 
-//   function showPreviousSlide() {
-//     showSlide(currentSlide - 1);
-//   }
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
 
-//   var quizContainer = document.getElementById("quiz");
-//   var resultsContainer = document.getElementById("results");
-//   var submitButton = document.getElementById("submit");
+  var quizContainer = document.getElementById("quiz");
+  var resultsContainer = document.getElementById("results");
+  var submitButton = document.getElementById("submit");
 
-//   buildQuiz();
+  buildQuiz();
 
-//   var previousButton = document.getElementById("previous");
-//   var nextButton = document.getElementById("next");
-//   var slides = document.querySelectorAll(".slide");
-//   var currentSlide = 0;
+  var previousButton = document.getElementById("previous");
+  var nextButton = document.getElementById("next");
+  var slides = document.querySelectorAll(".slide");
+  var currentSlide = 0;
 
-//   showSlide(0);
+  showSlide(0);
 
-//   submitButton.addEventListener("click", showResults);
-//   previousButton.addEventListener("click", showPreviousSlide);
-//   nextButton.addEventListener("click", showNextSlide);
-// })();
-// }])
+  submitButton.addEventListener("click", showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
+}])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// COLOR GAME CONTROLLER
+.controller('ColorGameController', ['$scope', '$resource', 'User', '$location', function($scope, $resource, User, $location) {
+
+var numSquares = 6;
+var colors = [];
+var pickedColor;
+var squares = document.querySelectorAll(".square");
+var colorDisplay = document.getElementById("colorDisplay");
+var messageDisplay = document.querySelector("#message");
+var h1 = document.querySelector("h1");
+var resetButton = document.querySelector("#reset");
+var modeButtons = document.querySelectorAll(".mode");
+
+
+init();
+
+function init() {
+    setupModeButtons();
+    setupSquares();
+    reset();
+}
+var sound = new Howl({
+    src: ['./views/sounds/bubbles.mp3']
+  
+  });
+  var sound2 = new Howl({
+    src: ['./views/sounds/strike.mp3']
+});
+
+var sound3= new Howl({
+    src: ['./views/sounds/zig-zag.mp3']
+});
+
+
+
+function setupModeButtons() {
+    for (var i = 0; i < modeButtons.length; i++) {
+        modeButtons[i].addEventListener("click", function () {
+            modeButtons[0].classList.remove("selected");
+            modeButtons[1].classList.remove("selected");
+            this.classList.add("selected");
+            this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
+            reset();
+        
+        });
+    }
+}
+
+
+function setupSquares() {
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].addEventListener("click", function () {
+            var clickedColor = this.style.background;
+            if (clickedColor === pickedColor) {
+                messageDisplay.textContent = "Correct!";
+                resetButton.textContent = "Play Again?"
+                changeColors(clickedColor);
+                h1.style.background = clickedColor;
+                sound.play(); 
+                
+                
+            } else {
+                this.style.background = "#232323";
+                messageDisplay.textContent = "Try Again"
+                sound2.play();
+            }
+        });
+    }
+}
+
+function reset() {
+    colors = generateRandomColors(numSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    resetButton.textContent = "New Colors"
+    messageDisplay.textContent = "";
+    for (var i = 0; i < squares.length; i++) {
+        if (colors[i]) {
+            squares[i].style.display = "block"
+            squares[i].style.background = colors[i];
+        } else {
+            squares[i].style.display = "none";
+           
+        }
+    }
+    h1.style.background = "steelblue";
+}
+
+resetButton.addEventListener("click", function () {
+    reset(); sound3.play();
+    
+    
+})
+
+function changeColors(color) {
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.background = color;
+    }
+}
+
+function pickColor() {
+    var random = Math.floor(Math.random() * colors.length);
+   return colors [random];
+
+}
+
+function generateRandomColors(num) {
+    var arr = []
+    for (var i = 0; i < num; i++) {
+        arr.push(randomColor())
+    }
+    return arr;
+}
+
+function randomColor() {
+    //pick a red from 0 - 255
+    var r = Math.floor(Math.random() * 256);
+    //pick a green from  0 -255
+    var g = Math.floor(Math.random() * 256);
+    //pick a blue from  0 -255
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+}]);

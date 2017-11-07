@@ -23,8 +23,8 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     .when('/codeplay', {
         templateUrl: 'views/codeplay.html',
     })    
-    .when('/codeplay/color-index', {
-        templateUrl: 'views/color-index.html', //issue
+    .when('/codeplay/color-game', {
+        templateUrl: 'views/color-game.html', //issue
         controller: 'ColorGameController'
     })
     .when('/codeplay/multichoice', {
@@ -46,14 +46,14 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
         redirectTo: '/'
     });
 }])
-.run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
-    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
-        if (nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
-            event.preventDefault();
-            UserService.loginRedirect();
-        } else if (nextRoute.$$route.requiresAdmin && !UserService.isAdmin()) {
-            event.preventDefault();
-            $location.replace().path('/');
-        }
-    });
-}]);
+// .run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
+//     $rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
+//         if (nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
+//             event.preventDefault();
+//             UserService.loginRedirect();
+//         } else if (nextRoute.$$route.requiresAdmin && !UserService.isAdmin()) {
+//             event.preventDefault();
+//             $location.replace().path('/');
+//         }
+//     });
+// }]);
