@@ -79,8 +79,8 @@ angular.module('codecc.controllers', [])
 .controller('BootcampsController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, Bootcamp, User, $location) {
 
     $scope.bootcamps = Bootcamp.query();
-    $scope.bootcamp = Bootcamp.query({ id: routeParams.id });
-    $scope.reviews = Review.query({ id: routeParams.id });
+    // $scope.bootcamp = Bootcamp.query({ id: routeParams.id });
+    // $scope.reviews = Review.query({ id: routeParams.id });
       
     $scope.save = function() {
         var p = new Bootcamp($scope.bootcamps);
