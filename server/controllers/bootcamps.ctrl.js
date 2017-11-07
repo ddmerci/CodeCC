@@ -62,10 +62,11 @@ router.route('/bystate/:id')
         procedures.readBystate(req.params.id)
         .then(function(state){
             res.send(state);
-        }).catch(err);
+        }).catch(function(err) {
             console.log(err);
             res.sendStatus(500);
-    });
+    })
+});
 
 
 module.exports = router;

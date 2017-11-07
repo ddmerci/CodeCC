@@ -1,10 +1,10 @@
 <div ng-controller="HomeController">
     <div>
-        <div class="container" ng-repeat="p in posts">
+        <div class="post-container" ng-repeat="p in posts">
             <div class="row">
                 <div class="col-xs-6 col-sm-8 col-lg-10">
                     <div class="left">
-                        <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+                        <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 30px">
                         <h4>{{ p.username }}</h4>
                         <br>
                     </div>
