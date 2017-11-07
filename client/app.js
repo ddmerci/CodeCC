@@ -5,7 +5,7 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     .when('/', {
         templateUrl: 'views/login.html', 
         controller: 'LoginController',
-        // requiresLogin: true,
+        requiresLogin: true,
         // requiresAdmin: true 
     })
     .when('/signup', {
@@ -36,7 +36,7 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
         controller: 'CareersController'
     })
     .when('/bootcamps', {
-        templateUrl: 'views/bootcamps.html', //issue
+        templateUrl: 'views/bootcamps.html', 
         controller: 'BootcampsController'
     })
     .when('/resources', {
