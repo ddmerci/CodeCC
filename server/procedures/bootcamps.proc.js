@@ -9,8 +9,8 @@ exports.readByid = function(id){
     return db.row('GetBootcampByID', [id])
 }
 
-exports.readBystate = function(id, name, stack, city, state, cost, listingpic){
-    return db.row('GetBootcampsByState', [id, name, stack, city, state, cost, listingpic]);
+exports.readBystate = function(state){
+    return db.row('GetBootcampByState', [state]);
 }
 
 exports.create = function(id, name, stack, city, state, cost, listingpic) {
