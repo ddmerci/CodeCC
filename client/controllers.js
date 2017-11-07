@@ -54,7 +54,6 @@ angular.module('codecc.controllers', [])
 }])
 
 .controller('PostReplyController', ['$scope', '$routeParams', '$location', '$resource', 'Post', 'Reply', function($scope, $routeParams, $location, $resource, Post, Reply) {
-    //one_post.html with all replies for that post
     
     $scope.post = Post.get({ id: $routeParams.id });
     $scope.replies = Reply.query({ id: $routeParams.id });
@@ -78,9 +77,10 @@ angular.module('codecc.controllers', [])
 }])
 
 .controller('BootcampsController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, Bootcamp, User, $location) {
-//all bootcamps with option to add a bootcamp
 
     $scope.bootcamps = Bootcamp.query();
+    // $scope.bootcamp = Bootcamp.query({ id: routeParams.id });
+    // $scope.reviews = Review.query({ id: routeParams.id });
       
     $scope.save = function() {
         var p = new Bootcamp($scope.bootcamps);

@@ -39,6 +39,10 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
         templateUrl: 'views/bootcamps.html', 
         controller: 'BootcampsController'
     })
+    .when('/bootcamps/:id', {
+        templateUrl: 'views/one_bootcamp.html', 
+        controller: 'BootcampsController'
+    })
     .when('/resources', {
         templateUrl: 'views/resources.html'
     })
