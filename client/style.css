@@ -1,12 +1,41 @@
 /* GENERAL DIV CONTAINER BEGINS*/
 .container{
     border: 1px solid lightgrey;
-    margin: 1%;
-    border-radius: 5px;
+    margin: auto;
+    border-radius: 5px; 
 }
-.jumbotron{
-    background-color: RGBA(244, 299, 244, .1) !important;
+.jumbotron
+    background-color;  clear !important;
+    border-radius: 0px
 }
+  h1{ background-color: transparent;
+  }
+    img {
+        vertical-align: middle; 
+ }
+  .header{
+        padding-left: 20vmin; 
+        padding-top: 35vmin;  
+        background-image: url(http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg);
+        
+            /* Full height */
+            height: 100%; 
+            width: 100%;
+            /* border:1px solid black; */
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: rgb(108, 147, 187);
+            min-height: 100vh;
+            /* padding: 300px; */
+        
+        }
+        
+  .a {
+     font-weight: bold; width: auto
+  }
 .left {
     float: left;
 }
@@ -57,12 +86,18 @@ display: inherit
 }
 .center, .center-align{
     text-align: center;
-    text-shadow: -4px -1px black;
-
+    text-shadow: 4x -1px rgb(19, 17, 17);
+    text-decoration: bold;
 }
+h3{
+    background-color: #b1dcfb;
+}
+
 /* CAREERS ENDS */
 
-
+#blue{
+    background-color: blue;
+}
 
 
 

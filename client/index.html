@@ -49,22 +49,24 @@ crossorigin="anonymous">
 
 
   <!-- HEADER & NAV BEGINS-->
-  <div class="jumbotron" style="padding-top: 3%; margin: 0%">
-    <div class="row" style="margin-right: 3%">
-      <p class="right" ng-submit="login()">
-        <input type="text" ng-model="login.email" placeholder="email" class="form-control">
-        <input type="text" ng-model="login.password" placeholder="password" class="form-control">
-        <a class="btn btn-warning btn-sm" ng-href="/" ng-click="login()" value="Log In" role="button">LOGIN</a>
-      </p>
+  <!-- <div class="jumbotron"  > -->
+    <!-- <div class="row" style="margin-right: 0%"> -->
+     
       <h1>
-        <a ng-href="/home" id="logo"><img src="http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg" width="400" alt="" /></a>
+        <a ng-href="/home" id="logo"><img src="http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg" width="300" alt="30px" /></a>
       </h1>
-
+     
+      </p>
     </div>
+    <p class="right" ng-submit="login()">
+      <input type="text" ng-model="login.email" placeholder="email" class="form-control">
+      <input type="text" ng-model="login.password" placeholder="password" class="form-control">
+      <a class="btn btn-warning btn-sm" ng-href="/" ng-click="login()" value="Log In" role="button">LOGIN</a>
   </div>
 
   <!-- nav bar -->
-  <nav class="navbar navbar-default" style="padding: 0%">
+  <div class = "header"></div> 
+  <nav class="navbar navbar-default" >
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -76,7 +78,7 @@ crossorigin="anonymous">
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/home">CC SOCIAL</a>
-        <a class="btn btn-warning btn-sm" ng-href="/signup" style="margin-top: 5%" role="button">SIGN UP</a>
+        <a class="btn btn-warning btn-sm" ng-href="/signup"  role="button">SIGN UP</a>
         </p>
       </div>
 
