@@ -27,6 +27,16 @@ router.route('/')
 
 router.route('/:id')
 
+    .get(function(req, res){
+        procedures.read(req.params.id)
+        .then(function(review){
+            res.send(review);
+        }).catch(function(err){
+            console.log(err);
+            res.sendStatus(500);
+        });
+    })
+
     .put(function (req, res) {
         procedures.update(req.params.id, req.body.review, req.body.timestamp, req.body.username, req.body.profilepic)
             .then(function () {
