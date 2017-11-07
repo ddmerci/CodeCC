@@ -21,4 +21,8 @@ exports.destroy = function(id) {
     return db.empty('DeleteUser', [id]);
 }
 
+exports.readByEmail = function(email){
+    return db.row('GetUserByEmail', [email]);
+}
+
 //GetAllUsersByBootcamp to be added
