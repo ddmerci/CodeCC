@@ -6,7 +6,7 @@ exports.all = function (id) {
 }
 
 exports.read = function(id){
-    return db.row('GetBootcampByID', [id])
+    return db.row('GetBootcampByID', [id]);
 }
 
 exports.create = function (id, review, timestamp, username, profilepic) {    //profile_pic by userid passed in?

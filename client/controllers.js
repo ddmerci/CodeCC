@@ -63,16 +63,16 @@ angular.module('codecc.controllers', [])
     }
 
     $scope.savePost = function() {
-        console.log($scope.post);
-        // $scope.post.$update(function() {
-        //     $location.replace().path('/' + $routeParams.id);
-        // });
-        $scope.post.$update();
+        // console.log($scope.post);
+        $scope.post.$update(function() {
+            $location.replace().path('/' + $routeParams.id);
+        });
+        // $scope.post.$update();
     }
     $scope.deletePost = function() {
         if (confirm('Are you sure you want to delete this post?')) {
             $scope.post.$delete(function() {
-                $location.replace().path('/');
+                $location.replace().path('/home');
             });
         }
     }
@@ -80,7 +80,7 @@ angular.module('codecc.controllers', [])
     $scope.saveReply = function() {
         var r = new Reply($scope.reply);
         r.$save(function() {
-            $location.path('/one_post.html');
+            $location.path('/');
         }, function(err) {
             console.log(err);
         });
@@ -99,9 +99,9 @@ angular.module('codecc.controllers', [])
         });
     }
 }])
-.controller('OneBootcampController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, Bootcamp, User, $location) {
-    $scope.bootcamp = Bootcamp.query({ id: routeParams.id });
-    // $scope.reviews = Review.query({ id: routeParams.id });
+.controller('OneBootcampController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', 'Review', '$location', function($scope, $routeParams, $resource, Bootcamp, User, Review, $location) {
+    $scope.bootcamp = Bootcamp.get({ id: $routeParams.id });
+    $scope.reviews = Review.query({ id: $routeParams.id });
 }])
 .controller('CareersController', ['$scope', function(scope) {
     // <!-- CAREERS SCRIPT -->

@@ -28,7 +28,7 @@ router.route('/')
 router.route('/:id')
 
     .get(function(req, res){
-        procedures.read(req.params.id)
+        procedures.all(req.params.id)
         .then(function(review){
             res.send(review);
         }).catch(function(err){

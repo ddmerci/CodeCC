@@ -29,7 +29,7 @@ router.route('/:id')
 
     .get(function (req, res) {
         procedures.readByid(req.params.id)
-            .then(function (bootcamp) {
+            .then(function(bootcamp) {
                 res.send(bootcamp);
             }).catch(function (err) {
                 console.log(err);
