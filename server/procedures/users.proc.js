@@ -9,8 +9,8 @@ exports.read = function (id) {
     return db.row('GetOneUser', [id]);
 }
 
-exports.create = function (id, firstname, lastname, email, username, bootcamp, profilepic /*hash*/) {
-    return db.row('CreateUser', [id, firstname, lastname, email, username, bootcamp, profilepic /*hash*/]);
+exports.create = function (id, firstname, lastname, email, username, bootcamp, profilepic, hash) {
+    return db.row('CreateUser', [id, firstname, lastname, email, username, bootcamp, profilepic, hash]);
 }
 
 exports.update = function (id, firstname, lastname, email, username, bootcamp, profilepic) {
