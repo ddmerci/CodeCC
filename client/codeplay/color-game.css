@@ -1,9 +1,11 @@
-body {
-	background-color: #232323;
+.colorgame-body {
 	margin: 0;
 	font-family: "Montserrat", "Avenir";
+	background-color: #232323;
+
 }
 
+  
 .square {
 	width: 30%;
 	background: purple;
@@ -21,7 +23,7 @@ body {
 	max-width: 600px;
 }
 
-#h1 {
+#CD {
 	text-align: center;
 	line-height: 1.1;
 	font-weight: normal;
@@ -31,19 +33,13 @@ body {
 	text-transform: uppercase;
 	padding: 20px 0;
 }
+h1 {
+	/* font-size: 4.2rem; */
+	line-height: 110%;
+	margin: 2.1rem 0 1.68rem 0;
+  }
 
-#h12 {
-	text-align: center;
-	line-height: 1.1;
-	font-weight: normal;
-	color: white;
-	background: steelblue;
-	margin: 0;
-	text-transform: uppercase;
-	padding: 20px 0;
-}
-
-#colorDisplay {
+#color-Display {
 	font-size: 200%;
 }
 
@@ -77,13 +73,23 @@ button {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	outline: none;
+	/* text-align: center; */
 }
 
 button:hover {
 	color: white;
 	background: steelblue;
 }
-
+.container-games {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #232323;
+/* }
+	.body {
+		display: 0; */
+  }
 
 .modalDialog {
 	position: fixed;

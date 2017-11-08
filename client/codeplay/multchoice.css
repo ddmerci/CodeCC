@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 
-b1{
+.mult-body{
   font-size: 20px;
   font-family: 'Work Sans', sans-serif;
   color: #333;
@@ -64,3 +64,8 @@ button:hover{
   height: 200px;
   margin-top: 40px;
 }
+h1 {
+  /*   font-size: 4.2rem; */
+    line-height: 110%;
+    margin: 2.1rem 0 1.68rem 0;
+  }
