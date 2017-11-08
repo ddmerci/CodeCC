@@ -21,7 +21,7 @@ angular.module('codecc.factories', ['ngResource'])
     });
 }])
 .factory('Bootcamp', ['$resource', function($resource){
-    return $resource('/api/bootcamps', { id: '@id' }, {
+    return $resource('/api/bootcamps/:id', { id: '@id' }, {
         update: {
             method: 'PUT'
         }

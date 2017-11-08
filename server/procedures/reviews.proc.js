@@ -5,6 +5,10 @@ exports.all = function () {
     return db.rows('GetAllReviews');
 }
 
+exports.read = function(id){
+    return db.row('GetBootcampByID', [id])
+}
+
 exports.create = function (id, review, timestamp, username, profilepic) {    //profile_pic by userid passed in?
     return db.row('CreateReview', [id, review, timestamp, username, profilepic]);
 }

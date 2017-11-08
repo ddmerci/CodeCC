@@ -1,19 +1,18 @@
 <div>
-        <div>
-            <div class="post-container">
-            <div class="left"><p>
-                <img ng-src="{{ bootcamp.listingpic }}" height="75" width="75" alt="" style="border-radius: 50%">
-                <h4>{{ bootcamp.name }}</h4>
+    <div>
+        <div class="post-container">
+            <div class="left">
+                <p>
+                    <img ng-src="{{ bootcamp.listingpic }}" height="75" width="75" alt="" style="border-radius: 50%">
+                    <h4>{{ bootcamp.name }}</h4>
             </div>
+            <br>
             <div class="right">
                 <h5>{{ bootcamp.stack }}</h5>
                 <h5>{{ bootcamp.cost }}</h5>
-                <h5>{{ bootcamp.city }} {{ bootcamp.state }}</h5> </p>
+                <h5>{{ bootcamp.city }} {{ bootcamp.state }}</h5>
+                </p>
             </div>
-    
-            <p class="right"><input id="review" type="text" ng-model="Review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153" > 
-            <!-- not mobile responsive -->
-            <a class="btn btn-primary btn-sm" ng-href="#" role="button">review</a></p>
             <br>
             <br>
             <br>
@@ -23,11 +22,17 @@
             <br>
             <br>
             <br>
-            <div class="post-container" ng-repeat="r in replies"> 
-                <!-- issue loading replies -->
+            <br>
+            <br>
+            <br>
+            <p class="right">
+                <input id="review" type="text" ng-model="Review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153">
+                <a class="btn btn-primary btn-sm" ng-href="#" role="button">review</a>
+            </p>
+            <div class="post-container" ng-repeat="r in reviews">
                 <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
-                <h4>{{ r.username }} <br>
-                    {{ r.reply }}</h4>
+                <h4>{{ r.username }}
+                    <br> {{ r.review }}</h4>
                 <h5>{{ r.timestamp | date: 'short' }}</h5>
                 <br>
             </div>
