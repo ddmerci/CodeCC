@@ -51,13 +51,18 @@
 .hover:hover {
     background-color: white;
 }
-#logo {
-    margin-left: 2%; 
-    color: black;
+/* #logo { */
+    /* margin-left: 2%;  */
+    /* color: black; */
 }
 /* GENERAL DIV CONTAINER ENDS */
 
-
+/*LOGIN IN */
+ .login-info{
+    position: relative; 
+    padding: 30px 30px;
+    color: rgb(37, 117, 163);
+}
 
 
 /* RESOURCES BEGINS*/
@@ -95,8 +100,16 @@ display: inherit
     text-shadow: 4x -1px rgb(19, 17, 17);
     text-decoration: bold;
 }
-h3{
+.h3{
     background-color: #b1dcfb;
+    /* background-color: rgb(177, 220, 251); */
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 1.46rem 0 1.168rem 0;
 }
 
 /* CAREERS ENDS */
