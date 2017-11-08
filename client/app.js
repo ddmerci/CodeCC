@@ -2,11 +2,11 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
+    // .when('/', {
+    //     templateUrl: 'views/home.html', 
+    //     controller: 'HomeController',
+    // })
     .when('/', {
-        templateUrl: 'views/home.html', 
-        controller: 'HomeController',
-    })
-    .when('/login', {
         templateUrl: 'views/login.html', 
         controller: 'LoginController',//401 'Invalid' error
     })

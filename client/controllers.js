@@ -63,9 +63,11 @@ angular.module('codecc.controllers', [])
     }
 
     $scope.savePost = function() {
-        $scope.post.$update(function() {
-            $location.replace().path('/' + $routeParams.id);
-        });
+        console.log($scope.post);
+        // $scope.post.$update(function() {
+        //     $location.replace().path('/' + $routeParams.id);
+        // });
+        $scope.post.$update();
     }
     $scope.deletePost = function() {
         if (confirm('Are you sure you want to delete this post?')) {
