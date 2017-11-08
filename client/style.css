@@ -26,9 +26,9 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-attachment: fixed;
+            background-attachment: scroll;
             color: rgb(108, 147, 187);
-            min-height: 100vh;
+            /* min-height: 100vh; */
             /* padding: 300px; */
         
         }
@@ -39,9 +39,10 @@
             border: 0px solid transparent;
         }
         
-  .a {
-     font-weight: bold; width: auto
+  .a1 {
+     font-weight: bold; width: 20px;
   }
+
 .left {
     float: left;
 }
@@ -51,13 +52,28 @@
 .hover:hover {
     background-color: white;
 }
-#logo {
-    margin-left: 2%; 
-    color: black;
+/* Buttons for entire page */
+.btn {
+    /* border: 3px solid black; */
+    /* padding: 25px 25px; */
+    /* width: 100px */
+    margin-bottom: 30px;
+    min-height: 50px;
+    vertical-align: top;
 }
+
+/* #logo { */
+    /* margin-left: 2%;  */
+    /* color: black; */
+
 /* GENERAL DIV CONTAINER ENDS */
 
-
+/*LOGIN IN */
+ .login-info{
+    position: relative; 
+    padding: 30px 30px;
+    color: rgb(37, 117, 163);
+}
 
 
 /* RESOURCES BEGINS*/
@@ -95,8 +111,17 @@ display: inherit
     text-shadow: 4x -1px rgb(19, 17, 17);
     text-decoration: bold;
 }
-h3{
-    background-color: #b1dcfb;
+/* color for career text links for jobs and home page */
+.h3{
+    background-color: #0d212f;
+    /* background-color: rgb(177, 220, 251); */
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 1.46rem 0 1.168rem 0;
 }
 
 /* CAREERS ENDS */
@@ -106,8 +131,9 @@ h3{
 }
 
 
-
-
+#h4{
+	color: white
+}
 
 
 
