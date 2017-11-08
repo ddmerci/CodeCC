@@ -1,34 +1,100 @@
 <div>
     <div>
         <div class="post-container">
-        <div class="left"><p>
-            <img ng-src="{{ post.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
-            <h4>{{ post.username }}</h4>
-        </div>
-        <div class="right">
-            <h4>{{ post.post }}</h4>
-            <h5>{{ post.timestamp | date: 'short' }}</h5></p>
-        </div>
+            <div class="left">
+                <p>
+                    <img ng-src="{{ post.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+                    <h4>{{ post.username }}</h4>
+            </div>
+            <div class="right">
+                <h4>{{ post.post }}</h4>
+                <h5>{{ post.timestamp | date: 'short' }}</h5>
+                </p>
 
-        <p class="right"><input id="reply" type="text" ng-model="Reply" placeholder="reply to {{ post.username }}..." size="153" > 
-        <!-- not mobile responsive -->
-        <a class="btn btn-warning btn-sm" ng-click="saveReply()" role="button">post</a></p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="post-container" ng-repeat="r in replies"> 
-            <!-- issue loading replies -->
-            <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
-            <h4>{{ r.username }} <br>
-                {{ r.reply }}</h4>
-            <h5>{{ r.timestamp | date: 'short' }}</h5>
+                <div class="container">
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-1">EDIT</button>
+                    <div class="modal" id="modal-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                    <h1 class="modal-title">EDIT COMMENT</h1>
+
+                                    <div class="modal-body">
+                                        <form class="my-form" ng-submit="savePost()">
+                                            <div class="form-group">
+                                                <textarea class="form-control" ng-model="post.post"></textarea>
+                                            </div>
+                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal">
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
             <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="right">
+                <input id="reply" type="text" ng-model="Reply" placeholder="reply to {{ post.username }}..." size="153">
+                <!-- not mobile responsive -->
+                <a class="btn btn-warning btn-sm" ng-click="saveReply()" role="button">REPLY</a>
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="post-container" ng-repeat="r in replies">
+                <!-- issue loading replies -->
+                <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+                <h4>{{ r.username }}
+                    <br> {{ r.reply }}</h4>
+                <h5>{{ r.timestamp | date: 'short' }}</h5>
+                <br>
+                <div class="container">
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-2">EDIT</button>
+                    <div class="modal" id="modal-2">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                    <h1 class="modal-title">EDIT REPLY</h1>
+
+                                    <div class="modal-body">
+                                        <form class="my-form" ng-submit="saveReply()">
+                                            <div class="form-group">
+                                                <textarea class="form-control" ng-model="r.reply"></textarea>
+                                            </div>
+                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal">
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
