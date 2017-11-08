@@ -8,7 +8,7 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     })
     .when('/login', {
         templateUrl: 'views/login.html', 
-        controller: 'LoginController',
+        controller: 'LoginController',//401 'Invalid' error
     })
     .when('/signup', {
         templateUrl: 'views/signup.html', 
@@ -50,7 +50,7 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     })
     .when('/bootcamps/:id', {
         templateUrl: 'views/one_bootcamp.html', 
-        controller: 'BootcampsController',
+        controller: 'OneBootcampController',
         // requiresLogin: true
     })
     .when('/resources', {
