@@ -7,7 +7,7 @@
   <meta http-equiv+ "X-UA-Compatible" content="IE=EDGE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  	<!-- SEO meta -->
+    <!-- SEO meta -->
 	<meta property="og:title" content="{{ seo.title }}">
 	<meta property="twitter:title" content="{{seo.title}}">
 	<meta property="og:image" content="{{ seo.image }}">
@@ -28,8 +28,8 @@ crossorigin="anonymous">
 crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="codeplay/color-game.css">
-  <link rel="stylesheet" type="text/css" href="codeplay/multchoice.css">
+  <link rel="stylesheet" type="text/css" href="./codeplay/color-game.css">
+  <link rel="stylesheet" type="text/css" href="./codeplay/multchoice.css">
 
   <title>CC Social</title>
 
@@ -52,64 +52,51 @@ crossorigin="anonymous">
   <!-- <div class="jumbotron"  > -->
     <!-- <div class="row" style="margin-right: 0%"> -->
      
-      <h1>
-        <a ng-href="/home" id="logo"><img src="http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg" width="300" alt="30px" /></a>
-      </h1>
-     
-      </p>
-    </div>
-    <p class="right" ng-submit="login()">
-      <input type="text" ng-model="login.email" placeholder="email" class="form-control">
-      <input type="text" ng-model="login.password" placeholder="password" class="form-control">
-      <a class="btn btn-warning btn-sm" ng-href="/" ng-click="login()" value="Log In" role="button">LOGIN</a>
-  </div>
-
-  <!-- nav bar -->
-  <div class = "header"></div> 
-  <nav class="navbar navbar-default" >
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/home">CC SOCIAL</a>
-        <a class="btn btn-warning btn-sm" ng-href="/signup"  role="button">SIGN UP</a>
-        </p>
+      <!-- <h1> -->
+        <!-- <a ng-href="/home" id="logo"><img src="http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg" width="300" alt="30px" /></a> -->
+      <!-- </h1> -->
+      <!-- <div class="navbar-header"> -->
+          <!-- <nav class="navbar navbar-default" > -->
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/home">CC SOCIAL</a>
+                  <a class="btn btn-warning btn-sm" ng-href="/signup"  role="button">SIGN UP</a>
+                  </p>
+                </div>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="hover">
+                      <a href="/home">HOME
+                        <span class="sr-only"></span>
+                      </a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/codeplay">CODE-PLAY</a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/careers">CAREERS</a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/bootcamps">BOOTCAMPS</a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/resources">RESOURCES</a>
+                    </li>
+                  </ul>
+                </div>
+               
+                </p>
+                <div class = "header"></div> 
+                <!-- Nikki you have the phone image under the "header" class in CSS (.header {background: img.jpg}) so that's why the picture goes away when you delete the above div^^^ -->
+        </div>     
       </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-        </ul>
-        <div>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="hover">
-              <a href="/home">HOME
-                <span class="sr-only"></span>
-              </a>
-            </li>
-            <li class="hover">
-              <a ng-href="/codeplay">CODE-PLAY</a>
-            </li>
-            <li class="hover">
-              <a ng-href="/careers">CAREERS</a>
-            </li>
-            <li class="hover">
-              <a ng-href="/bootcamps">BOOTCAMPS</a>
-            </li>
-            <li class="hover">
-              <a ng-href="/resources">RESOURCES</a>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
   </nav>
   <!-- HEADER & NAV ENDS -->
 
@@ -160,4 +147,5 @@ crossorigin="anonymous">
   crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
   crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script>
 </html>

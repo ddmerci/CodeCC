@@ -54,7 +54,6 @@ angular.module('codecc.controllers', [])
 }])
 
 .controller('PostReplyController', ['$scope', '$routeParams', '$location', '$resource', 'Post', 'Reply', function($scope, $routeParams, $location, $resource, Post, Reply) {
-    //one_post.html with all replies for that post
     
     $scope.post = Post.get({ id: $routeParams.id });
     $scope.replies = Reply.query({ id: $routeParams.id });
@@ -63,25 +62,32 @@ angular.module('codecc.controllers', [])
         $location.path('/' + $routeParams.id + '/update');
     }
 
-    $scope.save = function() {
+    $scope.savePost = function() {
         $scope.post.$update(function() {
             $location.replace().path('/' + $routeParams.id);
         });
     }
-    $scope.delete = function() {
-        if (confirm('Are you sure you want to delete?')) {
+    $scope.deletePost = function() {
+        if (confirm('Are you sure you want to delete this post?')) {
             $scope.post.$delete(function() {
                 $location.replace().path('/');
             });
         }
     }
-}])
 
+    $scope.saveReply = function() {
+        var r = new Reply($scope.reply);
+        r.$save(function() {
+            $location.path('/one_post.html');
+        }, function(err) {
+            console.log(err);
+        });
+    }
+}])
 .controller('BootcampsController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, Bootcamp, User, $location) {
-//all bootcamps with option to add a bootcamp
 
     $scope.bootcamps = Bootcamp.query();
-      
+
     $scope.save = function() {
         var p = new Bootcamp($scope.bootcamps);
         p.$save(function() {
@@ -90,6 +96,10 @@ angular.module('codecc.controllers', [])
             console.log(err);
         });
     }
+}])
+.controller('OneBootcampController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, Bootcamp, User, $location) {
+    $scope.bootcamp = Bootcamp.query({ id: routeParams.id });
+    // $scope.reviews = Review.query({ id: routeParams.id });
 }])
 .controller('CareersController', ['$scope', function(scope) {
     // <!-- CAREERS SCRIPT -->
