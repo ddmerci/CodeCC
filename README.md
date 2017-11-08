@@ -1,2 +1,0 @@
-# CodeCC
-Social Network

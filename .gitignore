@@ -1,3 +1,8 @@
+node_modules
+.variables
+.DS_Store
+nodemon.json
+
 # Logs
 logs
 *.log

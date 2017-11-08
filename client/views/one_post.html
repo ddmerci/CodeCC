@@ -1,0 +1,34 @@
+<div>
+    <div>
+        <div class="post-container">
+        <div class="left"><p>
+            <img ng-src="{{ post.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+            <h4>{{ post.username }}</h4>
+        </div>
+        <div class="right">
+            <h4>{{ post.post }}</h4>
+            <h5>{{ post.timestamp | date: 'short' }}</h5></p>
+        </div>
+
+        <p class="right"><input id="reply" type="text" ng-model="Reply" placeholder="reply to {{ post.username }}..." size="153" > 
+        <!-- not mobile responsive -->
+        <a class="btn btn-primary btn-sm" ng-href="#" role="button">post</a></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="post-container" ng-repeat="r in replies"> 
+            <!-- issue loading replies -->
+            <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+            <h4>{{ r.username }} <br>
+                {{ r.reply }}</h4>
+            <h5>{{ r.timestamp | date: 'short' }}</h5>
+            <br>
+        </div>
+    </div>
+</div>

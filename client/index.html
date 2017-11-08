@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="codecc">
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta http-equiv+ "X-UA-Compatible" content="IE=EDGE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO meta -->
+	<meta property="og:title" content="{{ seo.title }}">
+	<meta property="twitter:title" content="{{seo.title}}">
+	<meta property="og:image" content="{{ seo.image }}">
+	<meta property="twitter:image" content="{{seo.image}}">
+	<meta property="og:url" content="{{ seo.url }}">
+	<meta property="twitter:url" content="{{ seo.url }}">
+	<meta property="description" content="{{ seo.description }}">
+	<meta property="og:description" content="{{ seo.description }}">
+  <meta property="twitter:description" content="{{ seo.description }}">
+  
+  <!-- CSS -->
+  <!-- bootstrap -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./codeplay/color-game.css">
+  <link rel="stylesheet" type="text/css" href="./codeplay/multchoice.css">
+
+  <title>CC Social</title>
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+
+  <!-- HEADER & NAV BEGINS-->
+  <!-- <div class="jumbotron"  > -->
+    <!-- <div class="row" style="margin-right: 0%"> -->
+     
+      <!-- <h1> -->
+        <!-- <a ng-href="/home" id="logo"><img src="http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg" width="300" alt="30px" /></a> -->
+      <!-- </h1> -->
+      <!-- <div class="navbar-header"> -->
+          <!-- <nav class="navbar navbar-default" > -->
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/home">CC SOCIAL</a>
+                  <a class="btn btn-warning btn-sm" ng-href="/signup"  role="button">SIGN UP</a>
+                  </p>
+                </div>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="hover">
+                      <a href="/home">HOME
+                        <span class="sr-only"></span>
+                      </a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/codeplay">CODE-PLAY</a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/careers">CAREERS</a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/bootcamps">BOOTCAMPS</a>
+                    </li>
+                    <li class="hover">
+                      <a ng-href="/resources">RESOURCES</a>
+                    </li>
+                  </ul>
+                </div>
+               
+                </p>
+                <div class = "header"></div> 
+                <!-- Nikki you have the phone image under the "header" class in CSS (.header {background: img.jpg}) so that's why the picture goes away when you delete the above div^^^ -->
+        </div>     
+      </div>
+  </nav>
+  <!-- HEADER & NAV ENDS -->
+
+
+
+
+
+
+  <!-- ANGULAR VIEW BEGINS-->
+  <div ng-view></div>
+  <!-- ANGULAR VIEW ENDS -->
+
+
+
+
+
+
+
+  <!-- FOOTER BEGINS -->
+  <div><footer></footer></div>
+  <!-- FOOTER ENDS -->
+
+</body>
+
+
+
+
+<!-- EMBEDS -->
+
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<!-- angular -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.js"></script>
+
+<!-- javascript -->
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="controllers.js"></script>
+<script type="text/javascript" src="factories.js"></script>
+<script type="text/javascript" src="services.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+  crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script>
+</html>
