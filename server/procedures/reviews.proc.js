@@ -1,8 +1,8 @@
 var db = require('../config/db.js');
 //ADMIN AUTH?
 
-exports.all = function () {
-    return db.rows('GetAllReviews');
+exports.all = function (id) {
+    return db.rows('GetAllReviews', [id]);
 }
 
 exports.read = function(id){
