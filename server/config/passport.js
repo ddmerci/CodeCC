@@ -15,11 +15,12 @@ function configurePassport(app) {
         var loginError = 'Invalid Login Credentials';
         userProc.readByEmail(email).then(function(user) {
             if (!user) {
-                return done(null, false, { message: loginError });
+                return done(null, false, { message: 'noUser' });
             }
 
             return utils.checkPassword(password, user.password)
             .then(function(matches) {
+                console.log(matches);
                 if (matches) {
                     // if the password they are using to log in matches the hash in the database after hashing/salting
                     delete user.password;

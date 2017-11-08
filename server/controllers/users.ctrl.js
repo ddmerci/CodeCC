@@ -11,7 +11,7 @@ router.route('/')
         var u = req.body;
         utils.encryptPassword(req.body.password)
             .then(function (hash) {
-                return procedures.create(u.firstname, u.lastname, u.email, u.username, u.bootcamp, u.profilepic)
+                return procedures.create(u.firstname, u.lastname, u.email, u.username, u.bootcamp, u.profilepic, hash)
             }).then(function (id) {
                 res.sendStatus(201).send(id)
             }).catch(function (err) {

@@ -13,7 +13,6 @@
                 <h5>{{ bootcamp.stack }}</h5>
                 </p>
             </div>
-
             <br>
             <br>
             <br>
@@ -28,7 +27,7 @@
             <br>
             <p class="right">
                 <input id="review" type="text" ng-model="Review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153">
-                <a class="btn btn-primary btn-sm" ng-href="#" role="button">review</a>
+                <a class="btn btn-primary btn-sm" ng-href="#" role="button">REVIEW</a>
             </p>
             <div class="post-container" ng-repeat="r in reviews">
                 <p><img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
@@ -54,18 +53,12 @@
                                             </div>
                                             <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal">
                                         </form>
-
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-                <br>
             </div>
         </div>
     </div>
