@@ -22,11 +22,11 @@
                                     <h1 class="modal-title">EDIT COMMENT</h1>
 
                                     <div class="modal-body">
-                                        <form class="my-form" ng-submit="savePost()">
+                                        <form class="my-form">
                                             <div class="form-group">
                                                 <textarea class="form-control" ng-model="post.post"></textarea>
                                             </div>
-                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal">
+                                            <input class="btn btn-warning" ng-click="savePost()" value="Save" data-dismiss="modal">
                                             <button class="btn btn-danger" ng-click="delete()">Delete</button>
                                         </form>
 
