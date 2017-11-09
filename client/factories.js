@@ -28,7 +28,7 @@ angular.module('codecc.factories', ['ngResource'])
     });
 }])
 .factory('Review', ['$resource', function($resource){
-    return $resource('/api/review/:id', { id: '@id' }, {
+    return $resource('/api/reviews/:id', { id: '@id' }, {
         update: {
             method: 'PUT'
         }
