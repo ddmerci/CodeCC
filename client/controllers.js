@@ -16,7 +16,7 @@ angular.module('codecc.controllers', [])
 
     function redirect() {
         var dest = $location.search().dest;
-        if (!dest) { dest = '/'; }
+        if (!dest) { dest = '/home'; }
         $location.replace().path(dest).search('dest', null);
     }
 
@@ -34,7 +34,7 @@ angular.module('codecc.controllers', [])
 
     function redirect() {
         var dest = $location.search().dest;
-        if (!dest) { dest = '/'; }
+        if (!dest) { dest = '/home'; }
         $location.replace().path(dest).search('dest', null);
     }
 }])

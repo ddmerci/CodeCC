@@ -33,9 +33,18 @@
     color: darkmagenta;
     font-weight: bold;
 } 
-.nav-top:hover {
+/* .nav-top:hover {
     background-color: yellow;
 } 
+
+
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #FFFF00;
+
+} */
+
+
 .header{
     padding-left: 20vmin; 
     padding-top: 35vmin;  
@@ -59,7 +68,36 @@
 /* NAV HEADER ENDS */
 
 
+/* HOME */
+.post-container {
+    grid-template-columns: 7% 93%;
+    box-sizing: border-box;
+    /* display: grid; */
+ 
+  }
+  #post-user {
+    grid-template-columns: 7% 93%;
+    display: grid;
+    grid-gap: 3%;
+    padding: 1%;
+    color: darkmagenta;
+  }
+  #post-comment {
+    grid-template-columns: 7% 93%;
+    /* display: grid; */
+    color: darkmagenta;
+  }
+
+
+
+
+
+
+
+
+
 /* ??? */
+
 h1{ 
     background-color: white;
 }
@@ -74,9 +112,15 @@ img {
 
 /*LOGIN IN */
  .login-info{
-    position: relative; 
+    /* position: ; 
     padding: 30px 30px;
-    color: rgb(37, 117, 163);
+    display: inline-block;
+    color: rgb(37, 117, 163); */
+    font-weight: bold;
+    color: darkmagenta;
+}
+#modal-login, #modal-signup {
+    display: flow;
 }
 
 /* RESOURCES BEGINS*/
@@ -84,16 +128,12 @@ img {
     font-size: 28px;
     line-height: 20px;
     text-align: center;
-    color: green;
+    color:darkmagenta;
 }
 
 #ptext {
     font-size: 20px;
     text-align: center;
-}
-
-#explanationdiv {
-    background-color: lightgrey;
 }
 /* RESOURCES ENDS */
 
