@@ -68,7 +68,8 @@ angular.module('codecc.controllers', [])
     $scope.save = function() {
         var p = new Post($scope.post);
         p.$save(function() {
-            $location.path('/home');
+            $scope.posts = Post.query();
+            
         }, function(err) {
             console.log(err);
         });
@@ -109,8 +110,9 @@ angular.module('codecc.controllers', [])
     }
     $scope.saveReply = function() {
         var r = new Reply($scope.reply);
+        r.postid = $scope.post.id;
         r.$save(function() {
-            $location.path('/');
+            $location.path('/posts/:id');
         }, function(err) {
             console.log(err);
         });
@@ -145,7 +147,8 @@ angular.module('codecc.controllers', [])
     $scope.reviews = Review.query({ id: $routeParams.id });
 
     $scope.save = function() {
-        var r = new Review($scope.reviews);
+        var r = new Review($scope.review);
+        r.bootcampid = $scope.bootcamp.id;
         r.$save(function() {
             $location.path('/reviews/:id');
         }, function(err) {

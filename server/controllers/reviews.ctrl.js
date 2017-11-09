@@ -15,9 +15,10 @@ router.route('/')
     })
 
     .post(function (req, res) {
-        procedures.create(req.body.review, req.body.timestamp, req.body.username, req.body.profilepic)
+        console.log(req);
+        procedures.create( req.user.id, req.body.review, req.body.bootcampid) //req.body.timestamp, req.body.username, req.body.profilepic
             .then(function (id) {
-                res.sendStatus(201).send(id);
+                res.send(id);
             }).catch(function (err) {
                 console.log(err);
                 res.sendStatus(500);
