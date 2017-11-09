@@ -134,7 +134,7 @@ angular.module('codecc.controllers', [])
         });
     }
 }])
-.controller('OneBootcampController', ['$scope', '$routeParams','UserService', '$resource', 'Bootcamp', 'User', 'Review', '$location', function($scope, $routeParams, $resource, UserService, Bootcamp, User, Review, $location) {
+.controller('OneBootcampController', ['$scope', '$routeParams', '$resource', 'UserService', 'Bootcamp', 'User', 'Review', '$location', function($scope, $routeParams, $resource, UserService, Bootcamp, User, Review, $location) {
     UserService.me().then(function(me) {
         $scope.me = me;
         //redirect();
