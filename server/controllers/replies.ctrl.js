@@ -15,7 +15,7 @@ router.route('/:id')
     })
 
     .post(function (req, res) {
-        procedures.create(req.body.reply, req.body.timestamp, req.body.username, req.body.profilepic)
+        procedures.create(req.user.id, req.body.reply, req.body.postid) //req.body.timestamp, req.body.username, req.body.profilepic
             .then(function (id) {
                 res.sendStatus(201).send(id);
             }).catch(function (err) {

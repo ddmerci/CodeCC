@@ -5,12 +5,12 @@ exports.all = function (id) {
     return db.rows('GetAllReplies', [id])
 }
 
-exports.create = function (id, reply, timestamp, username, profilepic) {
-    return db.row('CreateReply', [id, reply, timestamp, username, profilepic]);
+exports.create = function (reply, userid) {
+    return db.row('CreateReply', [reply, userid]);
 }
 
-exports.update = function (id, reply, timestamp) {
-    return db.row('UpdateReply', [id, reply, timestamp])
+exports.update = function (userid, reply, id) {
+    return db.row('UpdateReply', [userid, reply, id])
 }
 
 exports.destroy = function (id) {
