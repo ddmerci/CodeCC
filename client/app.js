@@ -17,7 +17,7 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     .when('/home', {
         templateUrl: 'views/home.html', 
         controller: 'HomeController',
-        requiresLogin: true
+        // requiresLogin: true
     })
     .when('/posts/:id', {
         templateUrl: 'views/one_post.html',

@@ -1,9 +1,6 @@
 angular.module('codecc.controllers', [])
 
 .controller('LoginController', ['$scope', 'UserService', '$location', function($scope, UserService, $location) {
-    UserService.me().then(function() {
-        redirect();
-    });
         
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
@@ -14,6 +11,13 @@ angular.module('codecc.controllers', [])
         });
     }
 
+    
+    UserService.me().then(function(me) {
+        $scope.me = me;
+        // redirect();
+        
+    })
+
     function redirect() {
         var dest = $location.search().dest;
         if (!dest) { dest = '/home'; }
@@ -22,7 +26,7 @@ angular.module('codecc.controllers', [])
 
 }])
 
-.controller('SignupController', ['$scope', 'User', function($scope, User) {
+.controller('SignupController', ['$scope', 'UserService', 'User', function($scope, UserService, User) {
 
     $scope.createUser = function() {
         var u = new User($scope.newUser);
@@ -32,6 +36,12 @@ angular.module('codecc.controllers', [])
         });
     }
 
+    UserService.me().then(function(me) {
+        $scope.me = me;
+        redirect();
+        
+    })
+
     function redirect() {
         var dest = $location.search().dest;
         if (!dest) { dest = '/home'; }
@@ -39,10 +49,22 @@ angular.module('codecc.controllers', [])
     }
 }])
 
-.controller('HomeController', ['$scope', 'Post', '$location', function($scope, Post, $location) {
+.controller('HomeController', ['$scope', 'Post', '$location', 'UserService', function($scope, Post, $location, UserService) {
+    
+    // UserService.me().then(function() {
+    //     redirect();
+    // });
+   
+    UserService.me().then(function(me) {
+        $scope.me = me;
+        //redirect();
+        
+     })
     $scope.posts = Post.query();
+    //console.log($scope.posts);
     //later $scope.posts by followers
-     
+
+
     $scope.save = function() {
         var p = new Post($scope.post);
         p.$save(function() {
@@ -51,10 +73,19 @@ angular.module('codecc.controllers', [])
             console.log(err);
         });
     }
+    function redirect() {
+        var dest = $location.search().dest;
+        if (!dest) { dest = '/home'; }
+        $location.replace().path(dest).search('dest', null);
+    }
 }])
 
-.controller('PostReplyController', ['$scope', '$routeParams', '$location', '$resource', 'Post', 'Reply', function($scope, $routeParams, $location, $resource, Post, Reply) {
-    
+.controller('PostReplyController', ['$scope', '$routeParams', '$location', '$resource', 'UserService', 'Post', 'Reply', function($scope, $routeParams, $location, $resource, UserService, Post, Reply) {
+    UserService.me().then(function(me) {
+        $scope.me = me;
+        //redirect();
+     })
+
     $scope.post = Post.get({ id: $routeParams.id });
     $scope.replies = Reply.query({ id: $routeParams.id });
 
@@ -76,7 +107,6 @@ angular.module('codecc.controllers', [])
             });
         }
     }
-
     $scope.saveReply = function() {
         var r = new Reply($scope.reply);
         r.$save(function() {
@@ -86,7 +116,12 @@ angular.module('codecc.controllers', [])
         });
     }
 }])
-.controller('BootcampsController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, Bootcamp, User, $location) {
+.controller('BootcampsController', ['$scope', '$routeParams','$resource', 'UserService', 'Bootcamp', 'User', '$location', function($scope, $routeParams, $resource, UserService, Bootcamp, User, $location) {
+    UserService.me().then(function(me) {
+        $scope.me = me;
+        //redirect();
+        
+     });
 
     $scope.bootcamps = Bootcamp.query();
 
@@ -99,9 +134,24 @@ angular.module('codecc.controllers', [])
         });
     }
 }])
-.controller('OneBootcampController', ['$scope', '$routeParams','$resource', 'Bootcamp', 'User', 'Review', '$location', function($scope, $routeParams, $resource, Bootcamp, User, Review, $location) {
+.controller('OneBootcampController', ['$scope', '$routeParams','UserService', '$resource', 'Bootcamp', 'User', 'Review', '$location', function($scope, $routeParams, $resource, UserService, Bootcamp, User, Review, $location) {
+    UserService.me().then(function(me) {
+        $scope.me = me;
+        //redirect();
+        
+     });
+
     $scope.bootcamp = Bootcamp.get({ id: $routeParams.id });
     $scope.reviews = Review.query({ id: $routeParams.id });
+
+    $scope.save = function() {
+        var r = new Review($scope.reviews);
+        r.$save(function() {
+            $location.path('/reviews/:id');
+        }, function(err) {
+            console.log(err);
+        });
+    }
 }])
 .controller('CareersController', ['$scope', function(scope) {
     // <!-- CAREERS SCRIPT -->
