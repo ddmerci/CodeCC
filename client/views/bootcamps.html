@@ -12,7 +12,7 @@
                             <h1 class="modal-title">ADD BOOTCAMP</h1>
 
                             <div class="modal-body">
-                                <form class="my-form" ng-submit="saveBootcamp()">
+                                <form class="my-form" >
 
 
                                     <div class="form-group">
@@ -34,7 +34,7 @@
                                     <div class="form-group">
                                         <textarea class="form-control" ng-model="bootcamp.stack" placeholder="What languages and software does the program cover?"></textarea>
                                     </div>
-                                    <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal">
+                                    <input class="btn btn-warning"  value="Save" ng-click="saveBootcamp()" data-dismiss="modal">
                                 </form>
 
                             </div>

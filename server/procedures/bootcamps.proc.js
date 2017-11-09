@@ -13,8 +13,8 @@ exports.readBystate = function(state){
     return db.rows('GetBootcampByState', [state]);
 }
 
-exports.create = function(id, name, stack, city, state, cost, listingpic) {
-    return db.row('CreateBootcamp', [id, name, stack, city, state, cost, listingpic]);
+exports.create = function(name, stack, city, state, cost) {
+    return db.row('CreateBootcamp', [name, stack, city, state, cost]);
 }
 
 exports.update = function(id, name, stack, city, state, cost, listingpic) {
