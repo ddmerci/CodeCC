@@ -16,8 +16,8 @@ exports.update = function(id, post) {
     return db.empty('UpdatePost', [id, post]);
 }
 
-exports.create = function(id, post, timestamp, username, profilepic) {
-    return db.row('CreatePost', [id, post, timestamp, username, profilepic]);
+exports.create = function(post, userid) {
+    return db.row('CreatePost', [post, userid]);
 }
 
 exports.destroy = function(id, post, timestamp) {
