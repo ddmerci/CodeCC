@@ -98,15 +98,15 @@
 
 /* ??? */
 
-h1{ 
-    background-color: white;
+/* h1{ 
+    background-color: white; */
 }
-img {
+/* img {
     vertical-align: middle; 
-}     
-.a1 {
+}      */
+/* .a1 {
     font-weight: bold; width: 20px;
-}
+} */
 /* ??? */
 
 
@@ -137,33 +137,7 @@ img {
 }
 /* RESOURCES ENDS */
 
-/* CAREERS BEGINS */
-.careers-body{
-    background-color: #b1dcfb;
-/* background-color: #0e0e0e; */
-}
-#list{
-display: inherit
-}
-.center, .center-align{
-    text-align: center;
-    text-shadow: 4x -1px rgb(19, 17, 17);
-    text-decoration: bold;
-}
-/* color for career text links for jobs and home page */
-.h3{
-    background-color: #0d212f;
-    /* background-color: rgb(177, 220, 251); */
-    border-width: 0px;
-    border-style: solid;
-    border-color: transparent;
-    border-image: initial;
-    font-size: 2.92rem;
-    line-height: 110%;
-    margin: 1.46rem 0 1.168rem 0;
-}
 
-/* CAREERS ENDS */
 
 
 #blue{
