@@ -15,9 +15,10 @@ router.route('/')
     })
 
     .post(function(req, res) {
-        procedures.create(req.body.post, req.body.userid)
+        console.log(req.user);
+        procedures.create(req.body.post, req.user.id)
             .then(function(id) {
-                res.sendStatus(201).send(id);
+                res.send(id);
             }).catch(function (err) {
                 console.log(err);
                 res.sendStatus(500);
