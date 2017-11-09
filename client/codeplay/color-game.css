@@ -2,7 +2,12 @@
 	/* margin: 0; */
 	font-family: "Montserrat", "Avenir";
 	background-color: #232323;
+	   
 
+}
+.container.colorgame-body .a1{
+		text-decoration: none;	  
+	
 }
 
   
@@ -32,9 +37,10 @@
 	margin: 0;
 	text-transform: uppercase;
 	padding: 20px 0;
+	
 }
 .container.colorgame-body h1 {
-	/* font-size: 4.2rem; */
+	font-size: 4.2rem;
 	line-height: 110%;
 	margin: 2.1rem 0 1.68rem 0;
   }
@@ -62,23 +68,26 @@
 
 .container.colorgame-body button {
 	border: none;
-	background: none;
+	/* background: none; */
 	text-transform: uppercase;
 	height: 100%;
 	font-weight: 700;
 	color: steelblue;
 	letter-spacing: 1px;
-	font-size: inherit;
+	font-size: 14;
 	transition: all 0.3s;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	outline: none;
+	padding: 0px;
+	background-color: white;
 	/* text-align: center; */
 }
 
 .container.colorgame-body button:hover {
 	color: white;
 	background: steelblue;
+	
 }
 .container.colorgame-body .container-games {
 	margin-right: auto;

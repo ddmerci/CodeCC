@@ -40,7 +40,9 @@
         }
         
   .a1 {
-     font-weight: bold; width: 20px;
+     font-weight: bold; 
+     width: 20px;
+     color: purple;
   }
 
 .left {
