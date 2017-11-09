@@ -5,7 +5,7 @@
                         <option value="">User</option>
                         <option value="{{ post.userid }}">{{ p.username }}</option>
                 </select> -->
-            <input id="post" type="text" ng-model="post.post" placeholder="{{ post.username }} post a comment..." size="153">
+            <input id="post" type="text" ng-model="post.post" placeholder="{{ me.username }} post a comment..." size="153">
             <!-- not mobile responsive -->
             <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
         </p>

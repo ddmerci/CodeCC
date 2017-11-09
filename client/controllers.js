@@ -39,10 +39,15 @@ angular.module('codecc.controllers', [])
     }
 }])
 
-.controller('HomeController', ['$scope', 'Post', '$location', function($scope, Post, $location) {
+.controller('HomeController', ['$scope', 'Post', '$location', 'UserService', function($scope, Post, $location, UserService) {
     $scope.posts = Post.query();
+    console.log($scope.posts);
     //later $scope.posts by followers
-     
+     UserService.me().then(function(me) {
+         console.log(me);
+         $scope.me = me;
+     })
+
     $scope.save = function() {
         var p = new Post($scope.post);
         p.$save(function() {
