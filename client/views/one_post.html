@@ -51,7 +51,7 @@
             <br>
             <br>
             <p class="right">
-                <input id="reply" type="text" ng-model="Reply" placeholder="reply to {{ post.username }}..." size="153">
+                <input id="reply" type="text" ng-model="reply.reply" placeholder="reply to {{ post.username }}..." size="153">
                 <!-- not mobile responsive -->
                 <a class="btn btn-warning btn-sm" ng-click="saveReply()" role="button">REPLY</a>
             </p>
@@ -82,12 +82,12 @@
                                     <h1 class="modal-title">EDIT REPLY</h1>
 
                                     <div class="modal-body">
-                                        <form class="my-form" ng-click="saveReply()">
+                                        <form class="my-form">
                                             <div class="form-group">
                                                 <textarea class="form-control" ng-model="r.reply"></textarea>
                                             </div>
-                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal">
-                                            <button class="btn btn-danger" ng-click="delete()">Delete</button>
+                                            <input class="btn btn-warning"  ng-click="saveReply()" value="Save" data-dismiss="modal">
+                                            <button class="btn btn-danger" ng-click="deletePost()">DELETE</button>
                                         </form>
 
                                     </div>

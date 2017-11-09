@@ -5,8 +5,8 @@ exports.all = function (id) {
     return db.rows('GetAllReplies', [id])
 }
 
-exports.create = function (id, reply, timestamp, username, profilepic) {
-    return db.row('CreateReply', [id, reply, timestamp, username, profilepic]);
+exports.create = function (userid, reply, postid) {
+    return db.row('CreateReply', [userid, reply, postid]);
 }
 
 exports.update = function (id, reply, timestamp) {

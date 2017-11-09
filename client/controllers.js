@@ -59,7 +59,8 @@ angular.module('codecc.controllers', [])
         $scope.replies = Reply.query({ id: $routeParams.id });
 
         $scope.edit = function () {
-            $location.path('/' + $routeParams.id + '/update');
+            $location.replace().path('/home');
+            
         }
 
         $scope.savePost = function () {
@@ -71,16 +72,21 @@ angular.module('codecc.controllers', [])
         }
         $scope.deletePost = function () {
             if (confirm('Are you sure you want to delete this post?')) {
-                $scope.post.$delete(function () {
-                    $location.replace().path('/home');
-                });
-            }
+                var params = {id: this.r.id};
+                var thisone = new Reply;
+                thisone.$delete(params);
+                $location.replace().path('/');
+                          }
+      
+            
         }
 
         $scope.saveReply = function () {
             var r = new Reply($scope.reply);
+            r.postid = $scope.post.id;
             r.$save(function () {
-                $location.path('/');
+                $scope.replies = Reply.query({ id: $routeParams.id });
+                $location.path('/home');
             }, function (err) {
                 console.log(err);
             });
