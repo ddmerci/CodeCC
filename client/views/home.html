@@ -1,4 +1,4 @@
-<div ng-controller="HomeController">
+<div style="padding: 1%">
     <div>
         <p>
             <!-- <select class="form-control" ng-model="post.username">
@@ -19,8 +19,8 @@
                         <!-- </div> -->
                         <!-- <div id="post-comment"> -->
                         <a ng-href="/posts/{{ p.id }}" ng-click="post()">
-                            <h4>{{ p.post }}</h4>
-                            <h5>{{ p.timestamp | date: 'short' }}</h5>
+                            <h4 style="color: darkmagenta">{{ p.post }}</h4>
+                            <h5 style="color: darkmagenta">{{ p.timestamp | date: 'short' }}</h5>
                         </a>
                         <!-- {{ p.replies | number}} -->
                     </div>
