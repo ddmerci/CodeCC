@@ -1,7 +1,7 @@
 <div ng-controller="HomeController">
     <div>
         <p>
-                <!-- <select class="form-control" ng-model="post.username">
+            <!-- <select class="form-control" ng-model="post.username">
                         <option value="">User</option>
                         <option value="{{ post.userid }}">{{ p.username }}</option>
                 </select> -->
@@ -9,15 +9,15 @@
             <!-- not mobile responsive -->
             <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
         </p>
-        <div class="post-container" ng-repeat="p in posts">
-            <div class="row">
-                <div class="col-xs-6 col-sm-8 col-lg-8">
+        <div class="row">
+            <div class="col-xs-6 col-sm-8 col-lg-10">
+                <div class="post-container" ng-repeat="p in posts">
                     <div id="post-user">
                         <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 30px">
                         <h4>{{ p.username }}</h4>
                         <br>
-                    <!-- </div> -->
-                    <!-- <div id="post-comment"> -->
+                        <!-- </div> -->
+                        <!-- <div id="post-comment"> -->
                         <a ng-href="/posts/{{ p.id }}" ng-click="post()">
                             <h4>{{ p.post }}</h4>
                             <h5>{{ p.timestamp | date: 'short' }}</h5>
