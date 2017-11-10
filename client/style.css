@@ -1,5 +1,6 @@
 /* GENERAL DIV CONTAINER BEGINS*/
 .post-container{
+    padding: 2%;
     border: 1px solid lightgrey;
     margin: auto;
     border-radius: 5px; 

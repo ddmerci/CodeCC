@@ -9,12 +9,12 @@ exports.read = function(id){
     return db.row('GetBootcampByID', [id]);
 }
 
-exports.create = function (id, review, timestamp, username, profilepic) {    //profile_pic by userid passed in?
-    return db.row('CreateReview', [id, review, timestamp, username, profilepic]);
+exports.create = function (userid, review, id) {    
+    return db.row('CreateReview', [userid, review, id]);
 }
 
-exports.update = function (id, review, timestamp, username, profilepic) {     //profile_pic by userid passed in?
-    return db.row('UpdateReview', [id, review, timestamp, username, profilepic]);
+exports.update = function (id, review) {     
+    return db.row('UpdateReview', [id, review]);
 }
 
 exports.destroy = function (id) {

@@ -1,4 +1,4 @@
-<div>
+<div style="padding: 1%">
     <div>
         <div class="post-container">
             <div class="left">
@@ -26,9 +26,14 @@
             <br>
             <br>
             <p class="right">
-                <input id="review" type="text" ng-model="Review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153">
-                <a class="btn btn-primary btn-sm" ng-href="#" role="button">REVIEW</a>
+                <input id="review" type="text" ng-model="review.review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153">
+                <a class="btn btn-warning btn-sm" ng-click="save()" role="button">REVIEW</a>
             </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="post-container" ng-repeat="r in reviews">
                 <p><img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                 <h4>{{ r.username }}
