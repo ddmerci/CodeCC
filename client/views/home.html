@@ -1,17 +1,25 @@
 <div style="padding: 1%">
-    <div>
-        <p>
-            <!-- <select class="form-control" ng-model="post.username">
-                        <option value="">User</option>
-                        <option value="{{ post.userid }}">{{ p.username }}</option>
-                </select> -->
-            <input id="post" type="text" ng-model="post.post" placeholder="{{ me.username }} post a comment..." size="153">
-            <!-- not mobile responsive -->
-            <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
-        </p>
+
+<br>
+<br>
+        <div class="row">
+                <div class="col-xs-6 col-sm-8 col-lg-10">
+        <div class="post-container">
+            <br>
+            <br>
+            <p>
+                <input id="post" type="text" ng-model="post.post" placeholder="{{ post.username }} post a comment..." size="153">
+                <!-- not mobile responsive -->
+                <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
+            </p>
+            <br>
+            <br>
+        </div>
+        </div>
+        </div>
+    <br>
         <div class="row">
             <div class="col-xs-6 col-sm-8 col-lg-10">
-                
                 <div class="post-container" ng-repeat="p in posts">
                     <div id="post-user">
                         <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 30px">
@@ -23,8 +31,9 @@
                             <h4 style="color: darkmagenta">{{ p.post }}</h4>
                             <h5 style="color: darkmagenta">{{ p.timestamp | date: 'short' }}</h5>
                         </a>
+                        
                         <!-- {{ p.replies | number}} -->
-                    </div>
+                    </div><br>
                 </div>
             </div>
         </div>
