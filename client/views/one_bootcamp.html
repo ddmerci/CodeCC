@@ -1,16 +1,16 @@
 <div style="padding: 1%">
     <div>
-        <div class="post-container">
+        <div class="post-container" style="color: darkmagenta">
             <div class="left">
                 <p>
-                    <img ng-src="{{ bootcamp.listingpic }}" height="75" width="75" alt="" style="border-radius: 10%">
-                    <h4>{{ bootcamp.name }}</h4>
-                    <h5>{{ bootcamp.city }} {{ bootcamp.state }}</h5>
+                    <img ng-src="https://samepageteam.files.wordpress.com/2013/10/html-coding.jpg" alt="" height="125" width="125" style="border-radius: 10%">
+                    <h1>{{ bootcamp.name }}</h1>
+                    <h3>{{ bootcamp.city }} {{ bootcamp.state }}</h3>
             </div>
             <br>
             <div class="right">
-                <h5>{{ bootcamp.cost }}</h5>
-                <h5>{{ bootcamp.stack }}</h5>
+                <h3>${{ bootcamp.cost }}</h3>
+                <h3>{{ bootcamp.stack }}</h3>
                 </p>
             </div>
             <br>
@@ -25,7 +25,9 @@
             <br>
             <br>
             <br>
-            <p class="right">
+            <br>
+            <br>
+            <p style="margin-left: 5%">
                 <input id="review" type="text" ng-model="review.review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153">
                 <a class="btn btn-warning btn-sm" ng-click="save()" role="button">REVIEW</a>
             </p>

@@ -1,10 +1,10 @@
 <div class="careers-body">
-  <!-- <h1>CAREERS</h1> -->
+  
   <div class="container">
     <div class="container">
       <div class="center-align">
-
-        Looking for a Technical Position
+        <h1 style="color:darkmagenta">CAREERS</h1>
+        <h3>Looking for a Technical Position? We have you covered, just click a title to see relevant job listings!</h3> 
       </div>
 
       </ul>
@@ -647,17 +647,14 @@
   let filterInput = document.getElementById('list');
   // Add event Listner
   filterInput.addEventListener('change', filterNames);
-
   function filterNames() {
     // Get value of input
     let filterValue =
       document.getElementById('list').value.toUpperCase();
-
     // Get names ul
     let ul = document.getElementById('names');
     //get li's from ul
     let li = ul.querySelectorAll('li.collection-item');
-
     //Loop through collection-item Li's
     for (let i = 0; i < li.length; i++) {
       let a = li[i].getElementsByTagName('a')[0];
@@ -669,5 +666,4 @@
       }
     }
   }
-
 </script> -->

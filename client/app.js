@@ -22,40 +22,40 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
     .when('/posts/:id', {
         templateUrl: 'views/one_post.html',
         controller: 'PostReplyController', 
-        requiresLogin: true
+        // requiresLogin: true
     })
     .when('/codeplay', {
         templateUrl: 'views/codeplay.html',
-        requiresLogin: true
+        // requiresLogin: true
     })    
     .when('/codeplay/color-game', {
         templateUrl: 'views/color-game.html',
         controller: 'ColorGameController',
-        requiresLogin: true
+        // requiresLogin: true
     })
     .when('/codeplay/multichoice', {
         templateUrl: 'views/multichoice.html', 
         controller: 'MultichoiceController',
-        requiresLogin: true
+        // requiresLogin: true
     })
     .when('/careers', {
         templateUrl: 'views/careers.html',
         controller: 'CareersController',
-        requiresLogin: true
+        // requiresLogin: true
     })
     .when('/bootcamps', {
         templateUrl: 'views/bootcamps.html', 
         controller: 'BootcampsController',
-        requiresLogin: true
+        // requiresLogin: true
     })
     .when('/bootcamps/:id', {
         templateUrl: 'views/one_bootcamp.html', 
         controller: 'OneBootcampController',
-        requiresLogin: true
+        // requiresLogin: true
     })
     .when('/resources', {
         templateUrl: 'views/resources.html',
-        requiresLogin: true
+        // requiresLogin: true
     })
     .otherwise({
         redirectTo: '/'
