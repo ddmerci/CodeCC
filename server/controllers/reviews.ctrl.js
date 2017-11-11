@@ -15,9 +15,9 @@ router.route('/')
     })
 
     .post(function (req, res) {
-        procedures.create(req.body.review, req.body.timestamp, req.body.username, req.body.profilepic)
+        procedures.create(req.user.id, req.body.review, req.body.bootcampid)
             .then(function (id) {
-                res.sendStatus(201).send(id);
+                res.send(id);
             }).catch(function (err) {
                 console.log(err);
                 res.sendStatus(500);
@@ -28,7 +28,7 @@ router.route('/')
 router.route('/:id')
 
     .get(function(req, res){
-        procedures.read(req.params.id)
+        procedures.all(req.params.id)
         .then(function(review){
             res.send(review);
         }).catch(function(err){

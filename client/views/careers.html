@@ -1,10 +1,14 @@
 <div class="careers-body">
-  <!-- <h1>CAREERS</h1> -->
-
+  
   <div class="container">
-    <h3 class="center-align">
-      Looking for a Technical Position
-    </h3>
+    <div class="container">
+      <div class="center-align">
+        <h1 style="color:darkmagenta; background: none">CAREERS</h1>
+        <h3>Looking for a Technical Position? We have you covered, just click a title to see relevant job listings!</h3> 
+      </div>
+
+      </ul>
+    </div>
 
     <!-- <input type="text"> -->
     <select id="list">
@@ -47,7 +51,7 @@
 
 
     </select>
-    <ul id="names" class="collection with-header">
+    <ul id="names" style="list-style: none" class="collection with-header">
       <!-- onchange="getSelectValue()" -->
       <li class="collection-header">
         <h5>A</h5>
@@ -66,6 +70,7 @@
         </p>
 
       </li>
+      <br>
       <li class="collection-item">
         <a href="https://www.indeed.com/jobs?q=Application+Systems+Analyst&matchtype=b&network=g&
                 device=c&devicemodel=&creative=209821122138&keyword=&placement=&param1=&param2=&random=
@@ -95,6 +100,7 @@
           Typically reports to a manager. Works on projects/matters of limited complexity in a support role. Work is closely
           managed. Typically requires 0-2 years of related experience.</p>
       </li>
+      <br>
 
       <li class="collection-item">
         <a href="https://www.indeed.com/q-Big-Data-Engineer-Architect-jobs.html">Big Data Engineeer/Architect</a>
@@ -106,6 +112,7 @@
         </p>
 
       </li>
+      <br>
 
       <li class="collection-item">
         <a href="https://www.indeed.com/jobs?q=Business+Data+Analyst+II&l=">Business Data Analyst II</a>
@@ -135,6 +142,7 @@
         </p>
 
       </li>
+      <br>
 
       <li class="collection-item">
         <a href="https://www.indeed.com/q-Computer-Systems-Analyst-jobs.html">Computer System Analyst</a>
@@ -168,6 +176,7 @@
         </p>
 
       </li>
+      <br>
 
 
       <li class="collection-item">
@@ -184,6 +193,7 @@
         </p>
 
       </li>
+      <br>
       <li class="collection-item">
         <a href="https://www.indeed.com/jobs?q=Data+Security+Analyst&l=">Data Security Analyst</a>
         <br>
@@ -216,6 +226,7 @@
         </p>
 
       </li>
+      <br>
       <li class="collection-item">
         <a href="https://www.indeed.com/q-Entry-Level-Software-Developer-jobs.html">Entry Level Software Developer</a>
         <br>
@@ -244,6 +255,7 @@
         </p>
 
       </li>
+      <br>
       <li class="collection-item">
         <a href="https://www.indeed.com/q-Full-Stack-Developer-jobs.html">Full Stack Developers</a>
         <br>
@@ -398,6 +410,7 @@
         </p>
 
       </li>
+      <br>
       <li class="collection-item">
         <a href="https://www.indeed.com/jobs?q=Mobile+App+Developers&l=">Mobile App Developers</a>
         <br>
@@ -430,6 +443,7 @@
         </p>
 
       </li>
+      <br>
       <li class="collection-item">
         <a href="https://www.indeed.com/jobs?q=.NET+Developer&l=">.NET Developer</a>
         <br>
@@ -633,17 +647,14 @@
   let filterInput = document.getElementById('list');
   // Add event Listner
   filterInput.addEventListener('change', filterNames);
-
   function filterNames() {
     // Get value of input
     let filterValue =
       document.getElementById('list').value.toUpperCase();
-
     // Get names ul
     let ul = document.getElementById('names');
     //get li's from ul
     let li = ul.querySelectorAll('li.collection-item');
-
     //Loop through collection-item Li's
     for (let i = 0; i < li.length; i++) {
       let a = li[i].getElementsByTagName('a')[0];
@@ -655,5 +666,4 @@
       }
     }
   }
-
 </script> -->

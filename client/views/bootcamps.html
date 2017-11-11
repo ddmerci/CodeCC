@@ -1,23 +1,81 @@
-<div ng-controller="BootcampsController">
+<div style="padding-left: 25%">
     <div>
-        <h1>BOOTCAMPS</h1>
-        <button class="btn btn-warning btn-sm" ng-click="post()" role="button">add bootcamp</button>
-    </div>
-    <div>
+        <h1 style="color: darkmagenta; margin-left: 25%">BOOTCAMPS</h1>
+        <div>
+            <!-- class="container" -->
+            <button style="margin-left: 30%" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-3">ADD BOOTCAMP</button>
 
-    </div>
+            <div class="modal" id="modal-3">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-    <div class="row">
-        <div class="col-xs-6 col-sm-8 col-lg-10">
-            <div class="left">
-                <div class="post-container" ng-repeat="b in bootcamps"> <a   ng-href="/bootcamps/{{ b.id }}">
-                        <h4>{{ b.name }}</h4><h5>{{ b.city }}, {{ b.state }}</h5>
-                        <h5><br> $ {{ b.cost }}<br> <br>  {{ b.stack }}<br></h5> 
-                        
-                    <br></a>
+                            <h1 class="modal-title">ADD BOOTCAMP</h1>
+
+                            <div class="modal-body">
+                                <form class="my-form">
+
+
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.name
+                                    " placeholder="Name ">
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.city
+                                    " placeholder="City ">
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.state
+                                    " placeholder="Abbreviated State ">
+                                    </div>
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.cost
+                                    " placeholder="How much does the program cost? ">
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <textarea class="form-control " ng-model="bootcamp.stack " placeholder="What languages
+                                    and software does the program cover? "></textarea>
+                                    </div>
+                                    <input class="btn btn-warning "  value="Save " ng-click="saveBootcamp()
+                                    " data-dismiss="modal ">
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <button class="btn btn-warning btn-sm" ng-href="#" ng-click="post()" role="button">add review</button>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+    <div class="row ">
+        <div class="col-xs-6 col-sm-8 col-lg-10 ">
+            <div class="left ">
+                <div class="post-container " ng-repeat="b in bootcamps ">
+                    <p class="center">
+                        <a ng-href="/bootcamps/{{ b.id }}">
+                            <h4 style="color: darkmagenta">{{ b.name }}</h4>
+                            <h5 style="color: darkmagenta">{{ b.city }}, {{ b.state }}</h5>
+                            <h5 style="color: darkmagenta"></h5>                 
+                       
+                        <br>
+                        
+                                <h5 style="color: darkmagenta">${{ b.cost }}</h5>
+                                <h5 style="color: darkmagenta">{{ b.stack }}</h5> 
+                            </h5>
+                        </p>
+                        
+                            <br>
+                        </a>
                 </div>
             </div>
         </div>

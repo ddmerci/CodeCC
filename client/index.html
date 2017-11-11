@@ -26,12 +26,13 @@ crossorigin="anonymous">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
 crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css"> -->
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="./codeplay/color-game.css">
   <link rel="stylesheet" type="text/css" href="./codeplay/multchoice.css">
 
-  <title>CC Social</title>
+ 
+<title>CodeCamp Connect</title>
 
 
 
@@ -67,37 +68,31 @@ crossorigin="anonymous">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="/home">CC SOCIAL</a>
-                  <a class="btn btn-warning btn-sm" ng-href="/signup"  role="button">SIGN UP</a>
-                  </p>
+                   <a class="navbar-brand" id="nav-ccc" ng-href="/home">CODE <div style="color: orange; text-shadow: 2px 1px red; margin: 0%; display: inline">CAMP</div> => CONNECT</a>
                 </div>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li class="hover">
-                      <a href="/home">HOME
+                  <ul class="nav navbar-nav navbar-right" style=>
+                    <li>
+                      <a ng-href="/home" class="nav-top">HOME
                         <span class="sr-only"></span>
                       </a>
                     </li>
-                    <li class="hover">
-                      <a ng-href="/codeplay">CODE-PLAY</a>
+                    <li>
+                      <a ng-href="/codeplay" class="nav-top">CODE-PLAY</a>
                     </li>
                     <li class="hover">
-                      <a ng-href="/careers">CAREERS</a>
+                      <a ng-href="/careers" class="nav-top">CAREERS</a>
                     </li>
-                    <li class="hover">
-                      <a ng-href="/bootcamps">BOOTCAMPS</a>
+                    <li>
+                      <a ng-href="/bootcamps" class="nav-top">BOOTCAMPS</a>
                     </li>
-                    <li class="hover">
-                      <a ng-href="/resources">RESOURCES</a>
+                    <li>
+                      <a ng-href="/resources" class="nav-top">RESOURCES</a>
                     </li>
-                  </ul>
+                  </ul> 
                 </div>
-               
-                </p>
-                <div class = "header"></div> 
-                <!-- Nikki you have the phone image under the "header" class in CSS (.header {background: img.jpg}) so that's why the picture goes away when you delete the above div^^^ -->
-        </div>     
-      </div>
-  </nav>
+               <div class = "header"></div>
+  
+
   <!-- HEADER & NAV ENDS -->
 
 
@@ -140,11 +135,12 @@ crossorigin="anonymous">
 <script type="text/javascript" src="factories.js"></script>
 <script type="text/javascript" src="services.js"></script>
 
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
   crossorigin="anonymous"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-  crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+  crossorigin="anonymous"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script>

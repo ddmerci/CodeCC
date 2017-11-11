@@ -1,8 +1,98 @@
 <div>
-    <h3>Please sign-up or login to continue...</h3>
-    <p id="login" ng-submit="login()">
-        <input type="text" ng-model="email" placeholder="email" class="form-control">
-        <input type="text" ng-model="password" placeholder="password" class="form-control">
-        <a class="btn btn-warning btn-sm" ng-href="/" ng-click="login()" value="Log In" role="button">LOGIN</a>
-    </p>
-</div>
+    
+        <br>
+    
+        <div>
+            <div class="container">
+                <p>
+                    <form class="my-form" >
+                        <button style="display: inline !important; margin-left: 45%" type="button" class="btn btn-warning btn-lg" data-toggle="modal"
+                            data-target="#modal-login">LOGIN</button>
+                    </p>
+                <div class="modal" id="modal-login">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h1 class="modal-title">LOGIN</h1>
+                                <div class="modal-body">
+                                    <form class="my-form" ng-click="login()">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="email" placeholder="email" class="form-control">
+                                            <br>
+                                            <input type="text" ng-model="password" placeholder="password" class="form-control">
+                                        </div>
+                                        <br>
+                                        <input class="btn btn-warning" value="LOGIN" data-dismiss="modal" ng-click="login()">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h4 style="display: inline !important; margin-left: 48%">OR</h4>
+        <br>
+        <br>
+        <div>
+            <p style="margin-left: 45.5%">
+                <a type="button" class="btn btn-warning btn-lg" href="/signup">SIGN-UP</a>
+            </p>
+        </div>
+    
+<!-- 
+    <div class="container">
+        <div class="flex-child">
+        <li style="display: inline !important; margin-left: 44%">
+        <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#modal-signup">SIGN-UP</button>
+        </li>
+        <div class="modal" id="modal-signup">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1 class="modal-title">NEW USER SIGN-UP</h1>
+                        <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="form-control">
+                                        <strong>First Name:</strong>
+                                        <input type="text" ng-model="newUser.firstname" placeholder="Required" class="form-control">
+                                    </div>
+                                    <div class="form-control">
+                                        <strong>Last Name:</strong>
+                                        <input type="text" ng-model="newUser.lastname" placeholder="Required" class="form-control">
+                                    </div>
+                                    <div class="form-control">
+                                        <strong>Email Address:</strong>
+                                        <input type="text" ng-model="newUser.email" placeholder="Required" class="form-control">
+                                    </div>
+                                    <div class="form-control">
+                                        <strong>Username:</strong>
+                                        <input type="text" ng-model="newUser.username" placeholder="Required" class="form-control">
+                                    </div>
+                                    <div class="form-control">
+                                        <strong>Image URL:</strong>
+                                        <input type="text" ng-model="newUser.profilepic" placeholder="Optional" class="form-control">
+                                    </div>
+                                    <div class="form-control">
+                                        <strong>Bootcamp:</strong>
+                                        <input type="text" ng-model="newUser.bootcamp" placeholder="Optional" class="form-control">
+                                    </div>
+                                    <div class="form-control">
+                                        <strong>Password:</strong>
+                                        <input type="text" ng-model="newUser.password" placeholder="Required" class="form-control">
+                                    </div>
+                                </div>
+                                <br>
+                                <input class="btn btn-warning" value="Sign-Up" ng-click="createUser()" data-dismiss="modal">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div> -->

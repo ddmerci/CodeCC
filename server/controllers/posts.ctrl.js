@@ -6,18 +6,19 @@ router.route('/')
 
     .get(function (req, res) {
         procedures.all()
-            .then(function (posts) {
+            .then(function(posts) {
                 res.send(posts);
-            }).catch(function (err) {
+            }).catch(function(err) {
                 console.log(err);
                 res.sendStatus(500);
             });
     })
 
-    .post(function (req, res) {
-        procedures.create(req.body.post, req.body.timestamp, req.body.username, req.body.profilepic)
-            .then(function (id) {
-                res.sendStatus(201).send(id);
+    .post(function(req, res) {
+        console.log(req.user);
+        procedures.create(req.body.post, req.user.id)
+            .then(function(id) {
+                res.send(id);
             }).catch(function (err) {
                 console.log(err);
                 res.sendStatus(500);
@@ -26,29 +27,30 @@ router.route('/')
 
 router.route('/:id')
 
-    .get(function (req, res) {
+    .get(function(req, res) {
         procedures.read(req.params.id)
-            .then(function (post) {
+            .then(function(post) {
                 res.send(post);
-            }).catch(function (err) {
+            }).catch(function(err) {
                 console.log(err);
                 res.sendStatus(500);
             });
     })
 
-    .delete(function (req, res) {
+    .delete(function(req, res) {
         procedures.destroy(req.params.id)
-            .then(function () {
+            .then(function() {
                 res.sendStatus(204);
-            }).catch(function (err) {
+            }).catch(function(err) {
                 console.log(err);
                 res.sendStatus(500);
             });
     })
 
-    .put(function (req, res) {
-        procedures.update(req.params.id, req.body.post, req.body.timestamp)
-            .then(function () {
+    .put(function(req, res) {
+        console.log(req.body);
+        procedures.update(req.params.id, req.body.post)
+            .then(function() {
                 res.sendStatus(204);
             }).catch(function (err) {
                 console.log(err);
@@ -58,9 +60,9 @@ router.route('/:id')
 
 router.route('/byuser/:id')
 
-    .get(function (req, res) {
+    .get(function(req, res) {
         procedures.readposts(req.params.id)
-            .then(function (post) {
+            .then(function(post) {
                 res.send(post);
             }).catch(function (err) {
                 console.log(err);

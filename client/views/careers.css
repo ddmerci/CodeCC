@@ -1,0 +1,45 @@
+/* CAREERS BEGINS */
+
+
+
+.careers-body{
+    /* background-color: #b1dcfb; */
+    /* background-color: #0e0e0e;  */
+    background-color: rgb(177, 220, 251);
+
+ }
+.careers-body .collection .collection-item #list{
+display: inherit;
+box-sizing: border-box;
+padding-inline-end: left;
+border-style: groove;
+}
+
+.careers-body .collection .center, .center-align{
+    text-align: center;
+    text-shadow: 4x -1px rgb(19, 17, 17);
+    text-decoration: bold;
+}
+/* color for career text links for jobs and home page */ 
+.careers-body .container .container .center-align{
+    background-color: rgb(177, 220, 251); 
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 1.46rem 0 1.168rem 0;
+}  
+
+.careers-body .collection .collection-item {
+    background-color:rgb(231, 235, 231);
+    /* box-sizing: border-box; */
+    border-style: outset ;
+    
+}
+#list{
+    position: relative;
+     left: 40px;
+}
+/* CAREERS ENDS  */

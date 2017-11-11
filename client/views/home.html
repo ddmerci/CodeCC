@@ -1,22 +1,41 @@
-<div ng-controller="HomeController">
-    <div>
-        <div class="post-container" ng-repeat="p in posts">
-            <div class="row">
-                <div class="col-xs-6 col-sm-8 col-lg-10">
-                    <div class="left">
-                        <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 30px">
-                        <h4>{{ p.username }}</h4>
-                        <br>
-                    </div>
-                    <div class="right">
-                        <a ng-href="/posts/{{ p.id }}" ng-click="post()">
-                            <h4>{{ p.post }}</h4>
-                            <h5>{{ p.timestamp | date: 'short' }}</h5>
-                        </a>
-                        <!-- {{ p.replies | number}} -->
-                    </div>
+<div style="padding-left: 15%; background-color: RGBA(255, 165, 0, .1)">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xs-6 col-sm-8 col-lg-10">
+            <div class="post-container">
+                <br>
+                <br>
+                <p>
+                    <input id="post" type="text" ng-model="post.post" placeholder="{{ me.username }}, what's up?"
+                        size="153">
+                    <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
+                </p>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+
+        <div class="row">
+            <div class="col-xs-6 col-sm-8 col-lg-10">    
+                <div class="post-container" ng-repeat="p in posts">
+                <div id="post-user">
+                    <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+                    <h4>{{ p.username }}</h4>
+                    <br>
+
+                    <a ng-href="/posts/{{ p.id }}" ng-click="post()">
+                        <h4>{{ p.post }}</h4>
+                        <h5>{{ p.timestamp | date: 'short' }}</h5>
+                    </a>
+                    
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>

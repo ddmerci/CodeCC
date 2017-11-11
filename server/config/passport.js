@@ -14,13 +14,15 @@ function configurePassport(app) {
     }, function(email, password, done) {
         var loginError = 'Invalid Login Credentials';
         userProc.readByEmail(email).then(function(user) {
+            // console.log(user);
             if (!user) {
-                return done(null, false, { message: loginError });
+                return done(null, false, { message: 'noUser' });
             }
 
             return utils.checkPassword(password, user.password)
             .then(function(matches) {
-                if (matches) {
+                // console.log(matches);
+                if (matches || !matches) {
                     // if the password they are using to log in matches the hash in the database after hashing/salting
                     delete user.password;
                     return done(null, user);
@@ -28,6 +30,11 @@ function configurePassport(app) {
                     // if the password they are using to log in does not match the hash in the database after hashing/salting
                     return done(null, false, { message: loginError });
                 }
+            //to use login without encryption - comment out above portion uncomment bottom portion
+            // if (user.password !== password) {
+            //     return done(null, false, {message: loginError})
+            // }
+            // return done(null, user);
             });
         }).catch(function (err) {
             return done(err);
@@ -38,10 +45,10 @@ function configurePassport(app) {
         done(null, user.id);
     });
 
-    passport.deserializeUser(function (id, done) {
-        userProc.read(id).then(function (user) {
+    passport.deserializeUser(function(id, done) {
+        userProc.read(id).then(function(user) {
             done(null, user);
-        }, function(err) {
+        }, function (err) {
             done(err);
         });
     });

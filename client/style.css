@@ -1,86 +1,147 @@
 /* GENERAL DIV CONTAINER BEGINS*/
-.post-container{
-    border: 1px solid lightgrey;
-    margin: auto;
-    border-radius: 5px; 
-}
-/* .jumbotron */
-    /* background-color: red; */
-    /* border-radius: 0px */
 
-  h1{ background-color: white;
-  }
-    img {
-        vertical-align: middle; 
- }
-  .header{
-        padding-left: 20vmin; 
-        padding-top: 35vmin;  
-        background-image: url(http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg);
-        
-            /* Full height */
-            height: 100%; 
-            width: 100%;
-            /* border:1px solid black; */
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            color: rgb(108, 147, 187);
-            min-height: 100vh;
-            /* padding: 300px; */
-        
-        }
-        .navbar {
-            position: relative;
-            min-height: 50px;
-            margin-bottom: 20px;
-            border: 0px solid transparent;
-        }
-        
-  .a {
-     font-weight: bold; width: auto
-  }
 .left {
     float: left;
 }
 .right {
     float: right;
 }
-.hover:hover {
-    background-color: white;
-}
-#logo {
-    margin-left: 2%; 
-    color: black;
-}
 /* GENERAL DIV CONTAINER ENDS */
 
 
 
+/* NAV HEADER BEGINS */
+.navbar {
+    position: absolute;
+    border: 0px solid transparent;
+}
+#nav-ccc {
+    /* color: turquoise; */
+    color: darkmagenta;
+    font-weight: bold;   
+    font-size: 1.8em;
+    text-shadow: 2px 1px red;
+}
+.nav-top {
+    color: darkmagenta;
+    font-weight: bold;
+} 
+/* .nav-top:hover {
+    background-color: yellow;
+} 
+
+
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #FFFF00;
+
+} */
+
+
+.header{
+    padding-left: 20vmin; 
+    padding-top: 35vmin;  
+    background-image: url(http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg); 
+    zoom: 125%;
+           
+    /* Full height */
+    height: 100%; 
+    width: 100%;
+            /* border:1px solid black; */
+            /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    color: rgb(108, 147, 187);
+            /* min-height: 100vh; */
+            /* padding: 300px; */
+        
+}  
+/* NAV HEADER ENDS */
+
+
+/* HOME */
+/* HOME */
+#post {
+    width: 93%;
+    height: 32px;
+    border-radius: 5px;
+    margin-left: auto;
+	margin-right: auto;
+}
+.post-container {
+    padding: 2%;
+    border: 1px solid lightgrey;
+    margin: 2%;
+    border-radius: 5px; 
+    grid-template-columns: 7% 93%;
+    box-sizing: border-box;
+    background-color: white;
+    /* display: grid; */
+ 
+  }
+  #post-user {
+    grid-template-columns: 7% 93%;
+    display: grid;
+    grid-gap: 3%;
+    padding: 1%;
+    color: darkmagenta;
+  }
+  #post-comment {
+    grid-template-columns: 7% 93%;
+    /* display: grid; */
+    color: darkmagenta;
+  }
+
+
+
+
+
+
+
+
+
+/* ??? */
+
+h1{ 
+    background-color: white;
+}
+img {
+    vertical-align: middle; 
+}     
+.a1 {
+    font-weight: bold; width: 20px;
+}
+/* ??? */
+
+
+/*LOGIN IN */
+ .login-info{
+    /* position: ; 
+    padding: 30px 30px;
+    display: inline-block;
+    color: rgb(37, 117, 163); */
+    font-weight: bold;
+    color: darkmagenta;
+}
+#modal-login, #modal-signup {
+    display: flow;
+}
 
 /* RESOURCES BEGINS*/
 #refh1 {
     font-size: 28px;
     line-height: 20px;
     text-align: center;
-    color: green;
+    color:darkmagenta;
 }
 
 #ptext {
     font-size: 20px;
     text-align: center;
 }
-
-#explanationdiv {
-    background-color: lightgrey;
-}
 /* RESOURCES ENDS */
-
-
-
-
 
 /* CAREERS BEGINS */
 .careers-body{
@@ -95,19 +156,28 @@ display: inherit
     text-shadow: 4x -1px rgb(19, 17, 17);
     text-decoration: bold;
 }
-h3{
-    background-color: #b1dcfb;
+/* color for career text links for jobs and home page */
+.h3{
+    background-color: #0d212f;
+    /* background-color: rgb(177, 220, 251); */
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 1.46rem 0 1.168rem 0;
 }
 
 /* CAREERS ENDS */
 
+
 #blue{
     background-color: blue;
 }
-
-
-
-
+#h4{
+	color: white
+}
 
 
 
