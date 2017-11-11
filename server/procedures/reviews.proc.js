@@ -13,8 +13,8 @@ exports.create = function (userid, review, id) {
     return db.row('CreateReview', [userid, review, id]);
 }
 
-exports.update = function (id, review) {     
-    return db.row('UpdateReview', [id, review]);
+exports.update = function (id, review, timestamp, username, profilepic) {     //profile_pic by userid passed in?
+    return db.row('UpdateReview', [id, review, timestamp, username, profilepic]);
 }
 
 exports.destroy = function (id) {

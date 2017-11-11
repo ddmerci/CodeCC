@@ -4,25 +4,25 @@ var router = express.Router();
 
 router.route('/')
 
-.post(function (req, res) {
-    procedures.create(req.user.id, req.body.reply, req.body.postid)
-        .then(function (id) {
-            res.send(id);
-        }).catch(function (err) {
-            console.log(err);
-            res.sendStatus(500);
-        })
-})
-.delete(function (req, res) {
-    console.log(req);
-    procedures.destroy(req.params.id)
-        .then(function () {
-            res.sendStatus(204);
-        }).catch(function (err) {
-            console.log(err);
-            res.sendStatus(500);
-        });
-});
+    .post(function (req, res) {
+        procedures.create(req.user.id, req.body.reply, req.body.postid)
+            .then(function (id) {
+                res.send(id);
+            }).catch(function (err) {
+                console.log(err);
+                res.sendStatus(500);
+            })
+    })
+    .delete(function (req, res) {
+        console.log(req);
+        procedures.destroy(req.params.id)
+            .then(function () {
+                res.sendStatus(204);
+            }).catch(function (err) {
+                console.log(err);
+                res.sendStatus(500);
+            });
+    });
 
 router.route('/:id')
 
@@ -36,10 +36,6 @@ router.route('/:id')
             });
     })
 
-    
-
-// router.route('/:id')
-
     .put(function (req, res) {
         procedures.update(req.params.id, req.body.reply, req.body.timestamp)
             .then(function () {
@@ -52,7 +48,6 @@ router.route('/:id')
 
 
     .delete(function (req, res) {
-        console.log(req);
         procedures.destroy(req.params.id)
             .then(function () {
                 res.sendStatus(204);

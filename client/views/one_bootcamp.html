@@ -1,16 +1,16 @@
-<div style="padding: 1%">
+<div>
     <div>
-        <div class="post-container" style="color: darkmagenta">
+        <div class="post-container">
             <div class="left">
                 <p>
-                    <img ng-src="https://samepageteam.files.wordpress.com/2013/10/html-coding.jpg" alt="" height="125" width="125" style="border-radius: 10%">
-                    <h1>{{ bootcamp.name }}</h1>
-                    <h3>{{ bootcamp.city }} {{ bootcamp.state }}</h3>
+                    <img ng-src="{{ bootcamp.listingpic }}" height="75" width="75" alt="" style="border-radius: 10%">
+                    <h4>{{ bootcamp.name }}</h4>
+                    <h5>{{ bootcamp.city }} {{ bootcamp.state }}</h5>
             </div>
             <br>
             <div class="right">
-                <h3>${{ bootcamp.cost }}</h3>
-                <h3>{{ bootcamp.stack }}</h3>
+                <h5>{{ bootcamp.cost }}</h5>
+                <h5>{{ bootcamp.stack }}</h5>
                 </p>
             </div>
             <br>
@@ -25,11 +25,9 @@
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <p style="margin-left: 5%">
+            <p style="margin-left: 6%">
                 <input id="review" type="text" ng-model="review.review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153">
-                <a class="btn btn-warning btn-sm" ng-click="save()" role="button">REVIEW</a>
+                <a class="btn btn-warning btn-sm" ng-href="/bootcamps/:id" ng-click="save()" role="button">REVIEW</a>
             </p>
             <br>
             <br>
@@ -54,11 +52,11 @@
                                     <h1 class="modal-title">EDIT REVIEW</h1>
 
                                     <div class="modal-body">
-                                        <form class="my-form" ng-click="saveReview()">
+                                        <form class="my-form">
                                             <div class="form-group">
                                                 <textarea class="form-control" ng-model="r.review"></textarea>
                                             </div>
-                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal">
+                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal"  ng-click="saveReview()">
                                         </form>
                                     </div>
                                 </div>

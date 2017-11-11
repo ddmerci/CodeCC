@@ -20,7 +20,7 @@ exports.create = function(post, userid) {
     return db.row('CreatePost', [post, userid]);
 }
 
-exports.destroy = function(id, post, timestamp) {
-    return db.empty('DeletePost', [id, post, timestamp]);
+exports.destroy = function(id) {
+    return db.empty('DeletePost', [id]);
 }
 

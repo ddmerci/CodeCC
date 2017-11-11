@@ -2,7 +2,7 @@ var db = require('../config/db.js');
 //ADMIN AUTH?
 
 exports.all = function (id) {
-    return db.rows('GetAllReplies', [id])
+    return db.rows('GetAllReplies', [id]);
 }
 
 exports.create = function (userid, reply, postid) {
@@ -10,9 +10,9 @@ exports.create = function (userid, reply, postid) {
 }
 
 exports.update = function (id, reply, timestamp) {
-    return db.row('UpdateReply', [id, reply, timestamp])
+    return db.row('UpdateReply', [id, reply, timestamp]);
 }
 
 exports.destroy = function (id) {
-    return db.empty('DeleteReply', [id])
+    return db.empty('DeleteReply', [id]);
 }

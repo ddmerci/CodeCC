@@ -1,4 +1,4 @@
-<div  style="padding: 1%">
+<div>
     <div>
         <div class="post-container">
             <div class="left">
@@ -9,6 +9,7 @@
             <div class="right">
                 <h4>{{ post.post }}</h4>
                 <h5>{{ post.timestamp | date: 'short' }}</h5>
+                <!-- <h5>{{ p.replies | number}}</h5>  -->
                 </p>
 
                 <div class="container">
@@ -27,7 +28,7 @@
                                                 <textarea class="form-control" ng-model="post.post"></textarea>
                                             </div>
                                             <input class="btn btn-warning" ng-click="savePost()" value="Save" data-dismiss="modal">
-                                            <button class="btn btn-danger" ng-click="delete()">Delete</button>
+                                            <button class="btn btn-danger" ng-click="deletePost()">Delete</button>
                                         </form>
 
                                     </div>
@@ -51,8 +52,8 @@
             <br>
             <br>
             <p style="margin-left: 6%">
-                <input id="reply" type="text" ng-model="reply.reply" placeholder="reply to {{ post.username }}..." size="153">
-                <a class="btn btn-warning btn-sm" ng-click="saveReply()" role="button">REPLY</a>
+            <input id="reply" type="text" ng-model="reply.reply" placeholder="reply to {{ post.username }}..." size="153">
+            <a class="btn btn-warning btn-sm" ng-click="saveReply()" role="button">REPLY</a>
             </p>
             <br>
             <br>
@@ -86,7 +87,7 @@
                                                 <textarea class="form-control" ng-model="r.reply"></textarea>
                                             </div>
                                             <input class="btn btn-warning"  ng-click="saveReply()" value="Save" data-dismiss="modal">
-                                            <button class="btn btn-danger" ng-click="deletePost()">DELETE</button>
+                                            <button class="btn btn-danger" ng-click="deleteReply()">DELETE</button>
                                         </form>
 
                                     </div>

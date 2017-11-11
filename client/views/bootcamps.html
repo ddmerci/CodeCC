@@ -2,8 +2,9 @@
     <div>
         <h1 style="color: darkmagenta; margin-left: 25%">BOOTCAMPS</h1>
         <div>
-                <!-- class="container" -->
+            <!-- class="container" -->
             <button style="margin-left: 30%" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-3">ADD BOOTCAMP</button>
+
             <div class="modal" id="modal-3">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -13,29 +14,35 @@
                             <h1 class="modal-title">ADD BOOTCAMP</h1>
 
                             <div class="modal-body">
-                                <form class="my-form" >
+                                <form class="my-form">
 
 
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" ng-model="bootcamp.name" placeholder="Name">
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.name
+                                    " placeholder="Name ">
                                     </div>
 
 
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" ng-model="bootcamp.city" placeholder="City">
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.city
+                                    " placeholder="City ">
                                     </div>
 
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" ng-model="bootcamp.state" placeholder="Abbreviated State">
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.state
+                                    " placeholder="Abbreviated State ">
                                     </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" ng-model="bootcamp.cost" placeholder="How much does the program cost?">
+                                    <div class="form-group ">
+                                        <input class="form-control " type="text " ng-model="bootcamp.cost
+                                    " placeholder="How much does the program cost? ">
                                     </div>
 
-                                    <div class="form-group">
-                                        <textarea class="form-control" ng-model="bootcamp.stack" placeholder="What languages and software does the program cover?"></textarea>
+                                    <div class="form-group ">
+                                        <textarea class="form-control " ng-model="bootcamp.stack " placeholder="What languages
+                                    and software does the program cover? "></textarea>
                                     </div>
-                                    <input class="btn btn-warning"  value="Save" ng-click="saveBootcamp()" data-dismiss="modal">
+                                    <input class="btn btn-warning "  value="Save " ng-click="saveBootcamp()
+                                    " data-dismiss="modal ">
                                 </form>
 
                             </div>
@@ -50,26 +57,25 @@
 
     </div>
 
-    <div class="row">
-        <div class="col-xs-6 col-sm-8 col-lg-10">
-            <div class="left">
-                <div class="post-container" ng-repeat="b in bootcamps">
-                   
+    <div class="row ">
+        <div class="col-xs-6 col-sm-8 col-lg-10 ">
+            <div class="left ">
+                <div class="post-container " ng-repeat="b in bootcamps ">
                     <p class="center">
-                    <a ng-href="/bootcamps/{{ b.id }}">
-                        <h4 style="color: darkmagenta">{{ b.name }}</h4>
-                        <h5 style="color: darkmagenta">{{ b.city }}, {{ b.state }}</h5>
-                        <h5 style="color: darkmagenta"></h5>                 
-                   
-                    <br>
-                    
-                            <h5 style="color: darkmagenta">${{ b.cost }}</h5>
-                            <h5 style="color: darkmagenta">{{ b.stack }}</h5> 
-                        </h5>
-                    </p>
-                    
+                        <a ng-href="/bootcamps/{{ b.id }}">
+                            <h4 style="color: darkmagenta">{{ b.name }}</h4>
+                            <h5 style="color: darkmagenta">{{ b.city }}, {{ b.state }}</h5>
+                            <h5 style="color: darkmagenta"></h5>                 
+                       
                         <br>
-                    </a>
+                        
+                                <h5 style="color: darkmagenta">${{ b.cost }}</h5>
+                                <h5 style="color: darkmagenta">{{ b.stack }}</h5> 
+                            </h5>
+                        </p>
+                        
+                            <br>
+                        </a>
                 </div>
             </div>
         </div>
