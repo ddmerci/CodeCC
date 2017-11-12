@@ -5,7 +5,7 @@
   <base href="/">
   <meta charset="UTF-8">
   <meta http-equiv+ "X-UA-Compatible" content="IE=EDGE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- SEO meta -->
 	<meta property="og:title" content="{{ seo.title }}">
@@ -19,22 +19,18 @@
   <meta property="twitter:description" content="{{ seo.description }}">
   
   <!-- CSS -->
-  <!-- bootstrap -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-crossorigin="anonymous">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css"> -->
+  
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="./codeplay/color-game.css">
   <link rel="stylesheet" type="text/css" href="./codeplay/multchoice.css">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+  crossorigin="anonymous">
+
  
-<title>CodeCamp Connect</title>
-
-
+<title>CODE CAMP => CONNECT</title>
 
 
 </head>
@@ -46,18 +42,8 @@ crossorigin="anonymous">
 
 
 
-<body>
+<body ng-controller="HomeController">
 
-
-  <!-- HEADER & NAV BEGINS-->
-  <!-- <div class="jumbotron"  > -->
-    <!-- <div class="row" style="margin-right: 0%"> -->
-     
-      <!-- <h1> -->
-        <!-- <a ng-href="/home" id="logo"><img src="http://www.phonesheriff.com/blog/wp-content/uploads/2016/05/socialmedia.jpg" width="300" alt="30px" /></a> -->
-      <!-- </h1> -->
-      <!-- <div class="navbar-header"> -->
-          <!-- <nav class="navbar navbar-default" > -->
               <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -68,9 +54,10 @@ crossorigin="anonymous">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                   <a class="navbar-brand" id="nav-ccc" ng-href="/home">CODE <div style="color: orange; text-shadow: 2px 1px red; margin: 0%; display: inline">CAMP</div> => CONNECT</a>
+                   <a class="navbar-brand" id="nav-ccc" ng-href="/home"><h1 style="background: none">CODE <div style="color: orange; text-shadow: 2px 1px red; padding: 0%; display: inline">CAMP</div> => CONNECT</h1></a>
                 </div>
-                  <ul class="nav navbar-nav navbar-right" style=>
+                <img ng-src="{{ me.profilepic }}" height="45" width="45" alt="" style="border-radius: 50%; margin-left: 14%; margin-top: .20%">
+                  <ul class="nav navbar-nav navbar-right">
                     <li>
                       <a ng-href="/home" class="nav-top">HOME
                         <span class="sr-only"></span>
@@ -117,10 +104,7 @@ crossorigin="anonymous">
 </body>
 
 
-
-
 <!-- EMBEDS -->
-
 <!-- angular -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
@@ -132,17 +116,33 @@ crossorigin="anonymous">
 <script type="text/javascript" src="factories.js"></script>
 <script type="text/javascript" src="services.js"></script>
 
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-  crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-  crossorigin="anonymous"></script>  
+crossorigin="anonymous"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-  crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script>
-</html>
+crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script>
+
+<!-- Latest compiled and minified JavaScript
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+crossorigin="anonymous"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script> -->
 
 <!-- jquery -->
 <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+
+
+</html>
+
+
 

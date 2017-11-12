@@ -491,7 +491,7 @@ angular.module('codecc.controllers', [])
                         messageDisplay.textContent = "Correct!";
                         resetButton.textContent = "Play Again?"
                         changeColors(clickedColor);
-                        h1.style.background = clickedColor;
+                        // h1.style.background = clickedColor;
                         sound.play();
 
 
@@ -519,7 +519,7 @@ angular.module('codecc.controllers', [])
 
                 }
             }
-            h1.style.background = "steelblue";
+            // h1.style.background = "steelblue";
         }
 
         resetButton.addEventListener("click", function () {

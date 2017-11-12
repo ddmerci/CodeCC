@@ -1,9 +1,9 @@
-<div style="padding-left: 25%">
+<div style="padding-left: 24%">
     <div>
-        <h1 style="color: darkmagenta; margin-left: 25%">BOOTCAMPS</h1>
+        <h1 style="color: orange; margin-left: 24%">BOOTCAMPS</h1>
         <div>
             <!-- class="container" -->
-            <button style="margin-left: 30%" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-3">ADD BOOTCAMP</button>
+            <button style="margin-left: 28%" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-3">ADD BOOTCAMP</button>
 
             <div class="modal" id="modal-3">
                 <div class="modal-dialog">
@@ -38,8 +38,7 @@
                                     </div>
 
                                     <div class="form-group ">
-                                        <textarea class="form-control " ng-model="bootcamp.stack " placeholder="What languages
-                                    and software does the program cover? "></textarea>
+                                        <textarea class="form-control " ng-model="bootcamp.stack " placeholder="What languages and software programs are taught?"></textarea>
                                     </div>
                                     <input class="btn btn-warning "  value="Save " ng-click="saveBootcamp()
                                     " data-dismiss="modal ">
@@ -59,7 +58,7 @@
 
     <div class="row ">
         <div class="col-xs-6 col-sm-8 col-lg-10 ">
-            <div class="left ">
+            <div class="left">
                 <div class="post-container " ng-repeat="b in bootcamps ">
                     <p class="center">
                         <a ng-href="/bootcamps/{{ b.id }}">
