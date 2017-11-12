@@ -64,6 +64,7 @@
 .container.colorgame-body .selected {
 	color: white;
 	background: steelblue;
+	border-radius: 0px;
 }
 
 .container.colorgame-body button {
@@ -84,7 +85,7 @@
 	/* text-align: center; */
 }
 
-.container.colorgame-body button:hover {
+.colorgame-body button:hover {
 	color: white;
 	background: steelblue;
 	

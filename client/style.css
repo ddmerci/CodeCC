@@ -1,10 +1,66 @@
 /* GENERAL DIV CONTAINER BEGINS*/
+h1 {
+    text-shadow: 2px 1px red;
+}
 
 .left {
     float: left;
 }
 .right {
     float: right;
+}
+
+.modal-title{
+    text-align: center;
+    color:orange;
+}
+
+
+.txt-center {
+    text-align: center;
+}
+.hide {
+    display: none;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
 }
 /* GENERAL DIV CONTAINER ENDS */
 
@@ -15,7 +71,29 @@
     position: absolute;
     border: 0px solid transparent;
 }
+ul.nav a:hover { 
+    color: #fff !important;
+    text-shadow: 1px 1px darkmagenta !important;
+    background-color: yellow !important;
+}
+
+ul.nav a:active { 
+    color: #fff !important;
+    text-shadow: 1px 1px darkmagenta !important;
+    background-color: yellow !important;
+}
+
+ul.nav a:focus { 
+    color: white !important;
+    text-shadow: 2px 2px darkmagenta;
+    background-color:yellow !important;
+}
+
 #nav-ccc {
+    margin-top: -3%;
+    margin-left: -1%;
+    padding-left: 0%;
+    padding-top: 0%;
     /* color: turquoise; */
     color: darkmagenta;
     font-weight: bold;   
@@ -103,10 +181,6 @@
 
 
 /* ??? */
-
-h1{ 
-    background-color: white;
-}
 img {
     vertical-align: middle; 
 }     
@@ -125,29 +199,28 @@ img {
     font-weight: bold;
     color: darkmagenta;
 }
-#modal-login, #modal-signup {
+/* #modal-login, #modal-signup {
     display: flow;
-}
+} */
 
 /* RESOURCES BEGINS*/
 #refh1 {
-    font-size: 28px;
-    line-height: 20px;
     text-align: center;
-    color:darkmagenta;
+    color:orange;
 }
 
 #ptext {
     font-size: 20px;
     text-align: center;
+    color: darkmagenta;
 }
 /* RESOURCES ENDS */
 
 /* CAREERS BEGINS */
-.careers-body{
-    background-color: #b1dcfb;
-/* background-color: #0e0e0e; */
-}
+/* .careers-body{
+    background-color: #b1dcfb; 
+    background-color: #0e0e0e;
+} */
 #list{
 display: inherit
 }

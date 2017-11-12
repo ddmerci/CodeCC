@@ -8,8 +8,28 @@
                     <h5>{{ bootcamp.city }} {{ bootcamp.state }}</h5>
             </div>
             <br>
+            <div class="txt-center">
+                <form style="margin-left: -1%">
+                    <div class="rating">
+                        <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                        <label for="star5">☆</label>
+                        <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                        <label for="star4">☆</label>
+                        <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                        <label for="star3">☆</label>
+                        <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+                        <label for="star2">☆</label>
+                        <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                        <label for="star1">☆</label>
+                        <div class="clear"></div>
+                    </div>
+                </form>
+            </div>
             <div class="right">
-                <h5>{{ bootcamp.cost }}</h5>
+
+
+
+                <h5>${{ bootcamp.cost }}</h5>
                 <h5>{{ bootcamp.stack }}</h5>
                 </p>
             </div>
@@ -35,10 +55,12 @@
             <br>
             <br>
             <div class="post-container" ng-repeat="r in reviews">
-                <p><img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
-                <h4>{{ r.username }}
-                    <br> {{ r.review }}</h4>
-                <h5>{{ r.timestamp | date: 'short' }}</h5></p> 
+                <p>
+                    <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+                    <h4>{{ r.username }}
+                        <br> {{ r.review }}</h4>
+                    <h5>{{ r.timestamp | date: 'short' }}</h5>
+                </p>
 
 
                 <div class="container">
@@ -56,7 +78,7 @@
                                             <div class="form-group">
                                                 <textarea class="form-control" ng-model="r.review"></textarea>
                                             </div>
-                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal"  ng-click="saveReview()">
+                                            <input class="btn btn-warning" type="submit" value="Save" data-dismiss="modal" ng-click="saveReview()">
                                         </form>
                                     </div>
                                 </div>
