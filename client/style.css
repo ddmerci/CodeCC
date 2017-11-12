@@ -8,6 +8,9 @@ h1 {
 h3:focus {
     color: darkmagenta;
 }
+hr {
+    transform: rotate(90deg);
+}
 .left {
     float: left;
 }
