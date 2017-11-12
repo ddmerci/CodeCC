@@ -1,8 +1,13 @@
 /* GENERAL DIV CONTAINER BEGINS*/
+input:focus {
+    background-color:rgba(255, 255, 0, .1);
+}
 h1 {
     text-shadow: 2px 1px red;
 }
-
+h3:focus {
+    color: darkmagenta;
+}
 .left {
     float: left;
 }
@@ -37,12 +42,12 @@ h1 {
 }
 
 .rating > label {
-    float: right;
+    /* float: right; */
     display: inline;
     padding: 0;
     margin: 0;
     position: relative;
-    width: 1.1em;
+    /* width: 1.1em; */
     cursor: pointer;
     color: #000;
 }
@@ -181,12 +186,12 @@ ul.nav a:focus {
 
 
 /* ??? */
-img {
+/* img {
     vertical-align: middle; 
-}     
-.a1 {
+}      */
+/* .a1 {
     font-weight: bold; width: 20px;
-}
+} */
 /* ??? */
 
 
@@ -222,7 +227,8 @@ img {
     background-color: #0e0e0e;
 } */
 #list{
-display: inherit
+display: inherit;
+color: black;
 }
 .center, .center-align{
     text-align: center;
@@ -230,27 +236,27 @@ display: inherit
     text-decoration: bold;
 }
 /* color for career text links for jobs and home page */
-.h3{
-    background-color: #0d212f;
+/* .careers-body .h3 { */
+    /* background-color: #0d212f;
     /* background-color: rgb(177, 220, 251); */
-    border-width: 0px;
+    /* border-width: 0px;
     border-style: solid;
     border-color: transparent;
     border-image: initial;
     font-size: 2.92rem;
     line-height: 110%;
-    margin: 1.46rem 0 1.168rem 0;
-}
+    margin: 1.46rem 0 1.168rem 0;  */
+/* } */
 
 /* CAREERS ENDS */
 
 
-#blue{
+/* #blue{
     background-color: blue;
 }
 #h4{
 	color: white
-}
+} */
 
 
 

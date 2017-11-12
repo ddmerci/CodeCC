@@ -1,6 +1,6 @@
 <div>
     <div>
-        <div class="post-container">
+        <div class="post-container" style="color: darkmagenta">
             <div class="left">
                 <p>
                     <img ng-src="{{ bootcamp.listingpic }}" height="75" width="75" alt="" style="border-radius: 10%">
@@ -54,7 +54,7 @@
             <br>
             <br>
             <br>
-            <div class="post-container" ng-repeat="r in reviews">
+            <div class="post-container" ng-repeat="r in reviews | orderBy:'p.timestamp':true">
                 <p>
                     <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                     <h4>{{ r.username }}

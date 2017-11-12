@@ -48,7 +48,7 @@
 
 
 
-                        <div class="post-container" ng-repeat="p in posts">
+                        <div class="post-container" ng-repeat="p in posts | orderBy:'p.timestamp':true">
                             <div id="post-user">
                                 <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                                 <h4>{{ p.username }}</h4>
@@ -56,7 +56,7 @@
 
                                 <a ng-href="/posts/{{ p.id }}" ng-click="post()">
                                     <h4 style="color: darkmagenta">{{ p.post }}</h4>
-                                    <h5 style="color: darkmagenta">{{ p.timestamp | date: 'short' }}</h5>
+                                    <h5 style="color: darkmagenta">{{ p.timestamp | date: 'short' : 'EST' }}</h5>
                                 </a>
 
                             </div>

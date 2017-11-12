@@ -236,7 +236,7 @@ angular.module('codecc.controllers', [])
 
             var myQuestions = [
                 {
-                    question: "Which language is most know for styling our websites?",
+                    question: "Which language is most known for styling websites?",
                     answers: {
                         a: "JavaScript",
                         b: "CSS",

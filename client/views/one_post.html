@@ -64,7 +64,7 @@
             <br>
             <br>
             <br>
-            <div class="post-container" ng-repeat="r in replies">
+            <div class="post-container" ng-repeat="r in replies | orderBy:'r.timestamp':true">
                 <!-- issue loading replies -->
                 <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                 <h4>{{ r.username }}
