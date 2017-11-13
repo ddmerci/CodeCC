@@ -8,8 +8,9 @@ h1 {
 h3:focus {
     color: darkmagenta;
 }
-hr {
-    transform: rotate(90deg);
+textarea {
+    height: 100px;
+    width: 750px;
 }
 .left {
     float: left;
@@ -17,20 +18,16 @@ hr {
 .right {
     float: right;
 }
-
-.modal-title{
-    text-align: center;
-    color:orange;
+#reply-edit {
+    height: 300px;
+    width: 300px;  
 }
-
-
 .txt-center {
     text-align: center;
 }
 .hide {
     display: none;
 }
-
 .clear {
     float: none;
     clear: both;
@@ -158,6 +155,7 @@ ul.nav a:focus {
 }
 .post-container {
     padding: 2%;
+    padding-right: 5%;
     border: 1px solid lightgrey;
     margin: 2%;
     border-radius: 5px; 
@@ -222,13 +220,16 @@ ul.nav a:focus {
     text-align: center;
     color: darkmagenta;
 }
+.resources {
+    background-color: rgba(255, 255, 0, .1); 
+}
 /* RESOURCES ENDS */
 
 /* CAREERS BEGINS */
-/* .careers-body{
-    background-color: #b1dcfb; 
-    background-color: #0e0e0e;
-} */
+.careers-body{
+    background-color: rgba(255, 255, 0, .1);
+    /* background-color: #0e0e0e; */
+}
 #list{
 display: inherit;
 color: black;

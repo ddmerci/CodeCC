@@ -25,6 +25,11 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
         controller: 'PostReplyController', 
         requiresLogin: true
     })
+    .when('/replies', {
+        templateUrl: 'views/one_post.html',
+        controller: 'PostReplyController', 
+        requiresLogin: true
+    })
     .when('/codeplay', {
         templateUrl: 'views/codeplay.html',
         requiresLogin: true
@@ -50,6 +55,11 @@ angular.module('codecc', ['ngRoute', 'ngResource', 'codecc.controllers', 'codecc
         requiresLogin: true
     })
     .when('/bootcamps/:id', {
+        templateUrl: 'views/one_bootcamp.html', 
+        controller: 'OneBootcampController',
+        requiresLogin: true
+    })
+    .when('/reviews', {
         templateUrl: 'views/one_bootcamp.html', 
         controller: 'OneBootcampController',
         requiresLogin: true
