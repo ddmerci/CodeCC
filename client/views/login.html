@@ -3,33 +3,41 @@
         <br>
     
         <div>
-            <div class="container">
-                <p>
+            <div class="row">
+                <!-- <p>
                     <form class="my-form" >
                         <button style="display: inline !important; margin-left: 45%" type="button" class="btn btn-warning btn-lg" data-toggle="modal"
                             data-target="#modal-login">LOGIN</button>
-                    </p>
-                <div class="modal" id="modal-login">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h1 class="modal-title">LOGIN</h1>
-                                <div class="modal-body">
+                            
+                    </p> -->
+                <!-- <div class="modal" id="modal-login"> -->
+                    <!-- <div class="modal-dialog"> -->
+                        <!-- <div class="modal-content"> -->
+                            <!-- <div class="modal-header"> -->
+                                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                                <!-- <h1 class="modal-title">LOGIN</h1> -->
+                                <!-- <div class="modal-body"> -->
+                                    <div class="col-xs-4 col-sm-4 col-lg-4"></div>
+                                    <div class="col-xs-4 col-sm-4 col-lg-4">
                                     <form class="my-form" ng-click="login()">
                                         <div class="form-group">
                                             <input type="text" ng-model="email" placeholder="email" class="form-control">
                                             <br>
-                                            <input type="text" ng-model="password" placeholder="password" class="form-control">
-                                        </div>
+                                            <input type="password" ng-model="password" placeholder="password" class="form-control">
+                                        </div></form></div>
+                                        <div class="col-xs-4 col-sm-4 col-lg-4"></div>
                                         <br>
-                                        <input class="btn btn-warning" value="LOGIN" data-dismiss="modal" ng-click="login()">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                    <div>
+                                        <!-- <input class="btn btn-warning" value="LOGIN" data-dismiss="modal" ng-click="login()"> -->
+                                        <button style="display: inline !important; margin-left: 46.1%" type="button" class="btn btn-warning btn-lg" ng-click="login()">LOGIN</button>             
+                                    </div>
+                                
+                                
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
             </div>
         </div>
         <br>

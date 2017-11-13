@@ -11,19 +11,28 @@
             <div class="col-xs-3 col-sm-3 col-lg-4">
 
                 <div class="post-container" style="color: orange; text-shadow: 1px 1px darkmagenta; text-align: center; background-color:rgba(255, 255, 0, .1); margin-top: 4.5%; margin-left: 7%">
+                    
+                    
+                    <h4>Save the Date</h4>
+                    <a ng-href="https://plotcon.plot.ly/"><img width="320" height="180" ng-src="https://s8.postimg.org/455p9dnmt/Screen_Shot_2017-11-12_at_10.44.18_AM.png"></a>
+                    <br>
+                    <br> 
+                    <a ng-href="https://twitter.com/nodevember"><img width="320" height="180" ng-src="https://s8.postimg.org/9o88qlcyd/Screen_Shot_2017-11-12_at_10.17.41_AM.png"></a> 
+                    <br>
+                    <br>
                     <h4>Software Developer Life?</h4>
-                    <iframe id="ytplayer" type="text/html" width="320" height="180" src="https://www.youtube.com/embed?listType=search&list=SOFTWAREDEVELOPERLIFE"
+                    <iframe id="ytplayer" type="text/html" width="320" height="180" ng-src="https://www.youtube.com/embed?listType=search&list=SOFTWAREDEVELOPERLIFE"
                         frameborder="0"></iframe>
                     <br>
                     <br>
                     <h4>What Kind of Developer Are You?</h4>
-                    <iframe id="ytplayer" type="text/html" width="320" height="180" src="https://www.youtube.com/embed?listType=search&list=FRONTENDDEVELOPER"
+                    <iframe id="ytplayer" type="text/html" width="320" height="180" ng-src="https://www.youtube.com/embed?listType=search&list=FRONTENDDEVELOPER"
                         frameborder="0"></iframe>
                     <br>
-                    <iframe id="ytplayer" type="text/html" width="320" height="180" src="https://www.youtube.com/embed?listType=search&list=BACKENDDEVELOPER"
+                    <iframe id="ytplayer" type="text/html" width="320" height="180" ng-src="https://www.youtube.com/embed?listType=search&list=BACKENDDEVELOPER"
                         frameborder="0"></iframe>
                     <br>
-                    <iframe id="ytplayer" type="text/html" width="320" height="180" src="https://www.youtube.com/embed?listType=search&list=FULLSTACKDEVELOPER"
+                    <iframe id="ytplayer" type="text/html" width="320" height="180" ng-src="https://www.youtube.com/embed?listType=search&list=FULLSTACKDEVELOPER"
                         frameborder="0"></iframe>
                 </div>
 
@@ -35,20 +44,24 @@
                     <div class="post-container" style="background-color: rgba(255, 255, 0, .1); margin-left: -2%; margin-right: 4%">
                         <br>
                         <br>
-                        <p style="text-align:center">
-                            <input id="post" type="text" ng-model="post.post" placeholder="{{ me.username }}, what's up?" size="165">
+                        <form class="my-form" style="text-align:center">
+                            <div class="form-group">
+                            <input class="form-control" id="post" type="text" ng-model="post.post" placeholder="{{ me.username }}, what's up?" size="165"><br><br>
+                        <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
+                    </div>
+                    </form>
                             <br>
                             <br>
-                            <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
-                        </p>
-                        <br>
-                        <br>
+                            
 
                         <br>
+                        <br>
+
+                        <br>
 
 
 
-                        <div class="post-container" ng-repeat="p in posts">
+                        <div class="post-container" ng-repeat="p in posts | orderBy:'p.timestamp':false" style="margin-right: 5%">
                             <div id="post-user">
                                 <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                                 <h4>{{ p.username }}</h4>
@@ -56,7 +69,7 @@
 
                                 <a ng-href="/posts/{{ p.id }}" ng-click="post()">
                                     <h4 style="color: darkmagenta">{{ p.post }}</h4>
-                                    <h5 style="color: darkmagenta">{{ p.timestamp | date: 'short' }}</h5>
+                                    <p style="color: darkmagenta">{{ p.timestamp | date: 'short' : 'EST' }}</p>
                                 </a>
 
                             </div>
