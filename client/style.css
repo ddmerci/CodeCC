@@ -1,6 +1,6 @@
 /* GENERAL DIV CONTAINER BEGINS*/
 input:focus {
-    background-color:rgba(255, 255, 0, .1);
+    background-color:rgba(0, 255, 255, .1);
 }
 h1 {
     text-shadow: 2px 1px red;
@@ -161,21 +161,21 @@ ul.nav a:focus {
     border: 1px solid lightgrey;
     margin: 2%;
     border-radius: 5px; 
-    grid-template-columns: 7% 93%;
+    grid-template-columns: 10% 90%;
     box-sizing: border-box;
     background-color: white;
     /* display: grid; */
  
   }
   #post-user {
-    grid-template-columns: 7% 93%;
+    grid-template-columns: 10% 90%;
     display: grid;
     grid-gap: 3%;
     padding: 1%;
     color: darkmagenta;
   }
   #post-comment {
-    grid-template-columns: 7% 93%;
+    grid-template-columns: 10% 90%;
     /* display: grid; */
     color: darkmagenta;
   }

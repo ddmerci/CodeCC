@@ -33,13 +33,12 @@ angular.module('codecc.controllers', [])
         } //OK
     }]) // LOGIN GOOD
 
-    .controller('SignupController', ['$scope', 'UserService', 'User', function ($scope, UserService, User) {
+    .controller('SignupController', ['$scope', 'UserService', '$location', 'User', function ($scope, UserService, $location, User) {
 
         $scope.createUser = function () {
             var u = new User($scope.newUser);
             u.$save(function () {
                 $scope.newUser = {}, function () {
-                    ;
                     UserService.login($scope.email, $scope.password)
                         .then(function () {
                             redirect();
@@ -81,7 +80,9 @@ angular.module('codecc.controllers', [])
             var p = new Post($scope.post);
             p.$save(function () {
                 $scope.posts = Post.query();
-                // $location.path('/home');
+                $scope.hideMe = function(){
+                    $scope.show=false;
+                  }, hideMe();
             }, function (err) {
                 console.log(err);
             });
@@ -109,7 +110,8 @@ angular.module('codecc.controllers', [])
         $scope.savePost = function () {
             // console.log($scope.post);
             $scope.post.$update(function () {
-                $location.replace().path('/' + $routeParams.id);
+                // $location.replace().path('/' + $routeParams.id);
+                $scope.replies = Reply.query({ id: $routeParams.id });
             });
             // $scope.post.$update();
         }
@@ -141,7 +143,7 @@ angular.module('codecc.controllers', [])
         }
     }])
 
-    .controller('BootcampsController', ['$scope', '$routeParams', '$resource', 'UserService', 'Bootcamp', 'User', '$location', function ($scope, $routeParams, $resource, UserService, Bootcamp, User, $location) {
+    .controller('BootcampsController', ['$scope', '$routeParams', '$location', '$resource', 'UserService', 'Bootcamp', 'User', 'Review', function ($scope, $routeParams, $location, $resource, UserService, Bootcamp, User, Review) {
         UserService.me().then(function (me) {
             $scope.me = me;
             //redirect();    
@@ -160,7 +162,7 @@ angular.module('codecc.controllers', [])
         }
     }])
     
-    .controller('OneBootcampController', ['$scope', '$routeParams', '$resource', 'UserService', 'Bootcamp', 'User', 'Review', '$location', function ($scope, $routeParams, $resource, UserService, Bootcamp, User, Review, $location) {
+    .controller('OneBootcampController', ['$scope', '$routeParams', '$location', '$resource', 'UserService', 'Bootcamp', 'User', 'Review', function ($scope, $routeParams, $location, $resource, UserService, Bootcamp, User, Review) {
         UserService.me().then(function (me) {
             $scope.me = me;
             //redirect();
@@ -170,15 +172,25 @@ angular.module('codecc.controllers', [])
         $scope.bootcamp = Bootcamp.get({ id: $routeParams.id });
         $scope.reviews = Review.query({ id: $routeParams.id });
 
-        $scope.save = function () {
+        $scope.saveReview = function () {
             var r = new Review($scope.review);
             r.bootcampid = $scope.bootcamp.id;
             r.$save(function () {
-                $location.path('/reviews/:id');
+                $location.path('/bootcamps/{{ r.bootcampid');
             }, function (err) {
                 console.log(err);
             });
+            
         }
+        $scope.deleteReview = function () {
+            if (confirm('Admin will review your request, are you sure you want to delete this post?')) {
+                var params = {id: this.r.id};
+                var thisone = new Review;
+                thisone.$delete(params);
+                $scope.reviews = Review.query({ id: $routeParams.id });
+            }
+        }
+
     }])
 
 

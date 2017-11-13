@@ -44,20 +44,24 @@
                     <div class="post-container" style="background-color: rgba(255, 255, 0, .1); margin-left: -2%; margin-right: 4%">
                         <br>
                         <br>
-                        <p style="text-align:center">
-                            <input id="post" type="text" ng-model="post.post" placeholder="{{ me.username }}, what's up?" size="165">
+                        <form class="my-form" style="text-align:center">
+                            <div class="form-group">
+                            <input class="form-control" id="post" type="text" ng-model="post.post" placeholder="{{ me.username }}, what's up?" size="165"><br><br>
+                        <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
+                    </div>
+                    </form>
                             <br>
                             <br>
-                            <a class="btn btn-warning btn-sm" ng-click="save()" role="button">POST</a>
-                        </p>
-                        <br>
-                        <br>
+                            
 
                         <br>
+                        <br>
+
+                        <br>
 
 
 
-                        <div class="post-container" ng-repeat="p in posts | orderBy:'p.timestamp':true">
+                        <div class="post-container" ng-repeat="p in posts | orderBy:'p.timestamp':false" style="margin-right: 5%">
                             <div id="post-user">
                                 <img ng-src="{{ p.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                                 <h4>{{ p.username }}</h4>
@@ -65,7 +69,7 @@
 
                                 <a ng-href="/posts/{{ p.id }}" ng-click="post()">
                                     <h4 style="color: darkmagenta">{{ p.post }}</h4>
-                                    <h5 style="color: darkmagenta">{{ p.timestamp | date: 'short' : 'EST' }}</h5>
+                                    <p style="color: darkmagenta">{{ p.timestamp | date: 'short' : 'EST' }}</p>
                                 </a>
 
                             </div>

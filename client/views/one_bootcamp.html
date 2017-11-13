@@ -1,38 +1,37 @@
 <div>
     <div>
         <div class="post-container" style="color: darkmagenta">
-            <div class="left">
-                <p>
-                    <img ng-src="{{ bootcamp.listingpic }}" height="75" width="75" alt="" style="border-radius: 10%">
-                    <h4>{{ bootcamp.name }}</h4>
-                    <h5>{{ bootcamp.city }} {{ bootcamp.state }}</h5>
+            <div class="row">
+                <div class="col-lg-3">
+                
+                    <img ng-src="https://lisadalrymple.files.wordpress.com/2016/04/coding.jpg?w=620" height="175" width="250" alt="" style="border-radius: 10%">
+
             </div>
+            <div class="col-lg-8">
+                    <h3>{{ bootcamp.name }}</h3>
+                    <h4>{{ bootcamp.city }} {{ bootcamp.state }}</h4>
             <br>
-            <div class="txt-center">
-                <form style="margin-left: -1%">
-                    <div class="rating">
-                        <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
-                        <label for="star5">☆</label>
-                        <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
-                        <label for="star4">☆</label>
-                        <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
-                        <label for="star3">☆</label>
-                        <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
-                        <label for="star2">☆</label>
-                        <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
-                        <label for="star1">☆</label>
-                        <div class="clear"></div>
-                    </div>
-                </form>
+                <h4>${{ bootcamp.cost }}</h4>
+                <h4>{{ bootcamp.stack }}</h4>
             </div>
-            <div class="right">
-
-
-
-                <h5>${{ bootcamp.cost }}</h5>
-                <h5>{{ bootcamp.stack }}</h5>
-                </p>
+            <div class="col-lg-1">        
+                    <form>
+                            <div class="rating">
+                                <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                                <label for="star5">☆</label>
+                                <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                                <label for="star4">☆</label>
+                                <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                                <label for="star3">☆</label>
+                                <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+                                <label for="star2">☆</label>
+                                <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                                <label for="star1">☆</label>
+                                <div class="clear"></div>
+                            </div>
+                        </form>
             </div>
+        </div>
             <br>
             <br>
             <br>
@@ -47,14 +46,57 @@
             <br>
             <p style="margin-left: 6%">
                 <input id="review" type="text" ng-model="review.review" placeholder="POST A REVIEW FOR {{ bootcamp.name }}..." size="153">
-                <a class="btn btn-warning btn-sm" ng-href="/bootcamps/:id" ng-click="save()" role="button">REVIEW</a>
+                <a class="btn btn-warning btn-sm" ng-href="/bootcamps/:id" ng-click="saveReview()" role="button">REVIEW</a>
             </p>
             <br>
             <br>
             <br>
             <br>
             <br>
-            <div class="post-container" ng-repeat="r in reviews | orderBy:'p.timestamp':true">
+
+
+            <div class="post-container" ng-repeat="r in reviews | orderBy:'r.timestamp':false" style="color: darkmagenta">
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-2 col-lg-1">
+                    <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-lg-8">
+                    <h4>{{ r.username }}
+                        <br><br><br> {{ r.review }}</h4>
+                    <p>{{ r.timestamp | date: 'short' }}</p>
+                    </div>
+                    <br>
+                    <div class="col-xs-2 col-sm-2 col-lg-3">
+                            <a type="button" class="btn btn-warning btn-sm" ng-click="showRevEdit=true">EDIT</a>
+                            <button class="btn btn-danger btn-sm" style="margin-left: 1%" ng-click="deleteReview()">DELETE</button><br><br>
+                                <textarea ng-show="showRevEdit" ng-model="r.review">Edit your comment here...</textarea><br>
+                                <a ng-show="showRevEdit"type="button" class="btn btn-warning btn-sm" ng-click="saveReview()">SAVE</a></div>
+                        
+                        
+    
+                    
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="post-container" ng-repeat="r in reviews | orderBy:'p.timestamp':false">
                 <p>
                     <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                     <h4>{{ r.username }}
@@ -86,6 +128,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
