@@ -6,7 +6,7 @@
                     <img ng-src="{{ post.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                     <h4>{{ post.username }}</h4>
                 </div>    
-                <div class="col-lg-10">
+                <div class="col-lg-9">
                     <h4>{{ post.post }}</h4>
                     <p>{{ post.timestamp | date: 'short' }}</p>
                     <!-- <h5>{{ p.replies | number}}</h5>  -->
@@ -14,21 +14,23 @@
                     <a type="button" class="btn btn-warning btn-sm" ng-click="showedit=true">EDIT</a>
                     <button style="margin-left: 1%" class="btn btn-danger btn-sm" ng-click="deletePost()">DELETE</button><br><br>
                         <textarea ng-show="showedit" ng-model="post.post">Edit your comment here...</textarea><br>
+
                         <a ng-show="showedit"type="button" class="btn btn-warning btn-sm" ng-click="savePost()">SAVE</a></div>
-                
+                        
+                        
                 </div>
             
-                
+               <div class="col-lg-1"></div> 
+               <hr>
          <div class="row" style="text-align: center">
-             <div class="col-lg-1"></div>
-             <div class="col-lg-10">
+             <div class="col-lg-2"></div>
+             <div class="col-lg-9">
                     <br>
                     <br>
+                   
                     <br>
-                    
-                    <input id="reply" type="text" ng-model="reply.reply" placeholder="reply to {{ post.username }}..." size="153"><br><br>
+                    <textarea type="text" ng-model="reply.reply" placeholder="reply to {{ post.username }}..."></textarea><br><br>
                     <a class="btn btn-warning btn-sm" ng-click="saveReply()" role="button">REPLY</a>
-                    
                     <br>
                     <br>
                     <br>
@@ -44,15 +46,15 @@
                 <img ng-src="{{ r.profilepic }}" height="75" width="75" alt="" style="border-radius: 50%">
                 </div>
                 <div class="col-xs-8 col-sm-8 col-lg-8">
-                <h4>{{ r.username }}
-                    <br><br><br> {{ r.reply }}</h4>
+                <h4>{{ r.username }}</h4>
+                    <br><br><br> <h4 style="font-weight: normal">{{ r.reply }}</h4>
                 <p>{{ r.timestamp | date: 'short' }}</p>
                 </div>
                 <br>
                 <div class="col-xs-2 col-sm-2 col-lg-3">
                         <a type="button" class="btn btn-warning btn-sm" ng-click="showRepEdit=true">EDIT</a>
                         <button class="btn btn-danger btn-sm" style="margin-left: 1%" ng-click="deleteReply()">DELETE</button><br><br>
-                            <textarea ng-show="showRepEdit" ng-model="r.reply">Edit your comment here...</textarea><br>
+                            <textarea  id="reply-edit" ng-show="showRepEdit" ng-model="r.reply">Edit your comment here...</textarea><br>
                             <a ng-show="showRepEdit"type="button" class="btn btn-warning btn-sm" ng-click="savePost()">SAVE</a></div>
                     
                     

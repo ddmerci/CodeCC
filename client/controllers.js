@@ -110,8 +110,9 @@ angular.module('codecc.controllers', [])
         $scope.savePost = function () {
             // console.log($scope.post);
             $scope.post.$update(function () {
-                // $location.replace().path('/' + $routeParams.id);
-                $scope.replies = Reply.query({ id: $routeParams.id });
+                $scope.showedit = false;
+                $location.replace().path('/home');
+                
             });
             // $scope.post.$update();
         }
@@ -128,7 +129,7 @@ angular.module('codecc.controllers', [])
                 var params = {id: this.r.id};
                 var thisone = new Reply;
                 thisone.$delete(params);
-                $location.replace().path('/home');
+                $location.replace().path('/replies');
             }
         }
 
@@ -176,7 +177,8 @@ angular.module('codecc.controllers', [])
             var r = new Review($scope.review);
             r.bootcampid = $scope.bootcamp.id;
             r.$save(function () {
-                $location.path('/bootcamps/{{ r.bootcampid');
+                $location.replace().path('/bootcamps');
+                // $location.path();
             }, function (err) {
                 console.log(err);
             });
@@ -187,7 +189,7 @@ angular.module('codecc.controllers', [])
                 var params = {id: this.r.id};
                 var thisone = new Review;
                 thisone.$delete(params);
-                $scope.reviews = Review.query({ id: $routeParams.id });
+                $location.replace().path('/bootcamps');
             }
         }
 
